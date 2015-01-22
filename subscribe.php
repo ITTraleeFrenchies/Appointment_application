@@ -1,12 +1,13 @@
+<?php include('insert.php'); ?>
+
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>Student Application : Appointment</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!--		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link rel="stylesheet" href="style/all_style.css" type="text/css">
 		<link rel="stylesheet" href="style/body_style.css" type="text/css">
-		<link rel="icon" type="images/png" href="images/logo_website.png" />
-		<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css' -->
 	</head>
 	<body>
 		<section>
@@ -19,7 +20,7 @@
 			</div>
 			<h2>Appointment Application</h2>
 			
-				<form action="action_page.php">
+				<form action="" method="POST">
 					
 					<br>
 					<br>
@@ -28,14 +29,16 @@
 					<br>
 					<br>
 					<label for="firstname">Firstname</label>
-				    <input type="text" id="firstname" />
+				    <input type="text" name="firstname" />
 					<br>
 					<br>
 					<label for="lastname">Lastname</label>
-				    <input type="text" id="lastname" />
+				    <input type="text" name="lastname" />
 					<br>
 					<br>
-					<div class="btn-subscribe"> Subscribe </div>
+					<span><?php echo $error; ?></span>
+					<!--<div class="btn-subscribe"> Subscribe </div>-->
+					<input type="submit" value="Subscribe" name="submit_subscribe" class="btn-subscribe">
 					<br>
 				</form>
 			</div>
