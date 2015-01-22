@@ -22,7 +22,16 @@
 		$sql="insert into user values('". $tnumber . "','" . $firstname . "','" . $lastname . "', null, null)";
 		$query = mysqli_query($connection,$sql);
 			if ($query) {
-				header("location: index.php"); // Redirecting To Other Page
+				//header("location: index.php"); // Redirecting To Other Page
+				<body>
+					<div id="openModal" class="modalDialog">
+						<div>
+						
+							<a href="" title="Close" class="close">X</a>
+							<h2>Account created</h2>
+							<p id="textPopUp">An email has been sent to your Zimbra address email : </p>
+						</div>
+					</div>
 			} else {
 				$error = "Error : Invalid Tnumber	";
 			}

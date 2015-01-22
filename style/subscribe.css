@@ -53,10 +53,3 @@ margin : auto;
   padding: 10px 10px 10px 10px;
   text-decoration: none;
 }
-
-.btn-subscribe:hover, .btn-back:hover {
-  background: #2171a3;
-  text-decoration: none;
-}
-
-
