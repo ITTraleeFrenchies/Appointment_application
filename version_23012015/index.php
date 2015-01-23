@@ -1,5 +1,5 @@
 <?php
-	include('script_sql_index.php'); 
+	include('script_sql_index.php'); // Includes Login Script
 	if(isset($_SESSION['tnumber'])){
 		header("location: connected.php");
 	}
@@ -11,8 +11,8 @@
 		<title>Student Application : Appointment</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link rel="stylesheet" href="style/all_style.css" type="text/css">
-		<link rel="stylesheet" href="style/body_style.css" type="text/css">
-	
+		<link rel="stylesheet" href="style/index.css" type="text/css">
+		
 	</head>
 	<body>
 		<section>
@@ -35,11 +35,9 @@
 						<label for="pin">Pin</label>
 					    <input type="password" name="pin" placeholder="*****"/>
 						<br>
-						
 						<br>
-						<br>
-						<input name="submit_login" class="btn-login" value="login" type="submit"> </div>
-						<br>
+						<input name="submit_login" class="btn-login" value="login" type="submit">
+						<input name="submit_subscribe" class="btn-subscribe" value="subscribe" type="submit">
 						<br>
 					</form>
 					<span><?php echo $error; ?></span>
