@@ -1,10 +1,13 @@
-body {
-	
+h3 {
+float:left;
+padding-left:20px;
 }
-
+body {
+	font: 17px Tahoma, Helvetica, Arial, Sans-Serif;
+}
 form {
 		box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7); 
-	 background: #222; 
+		background: #222; 
 		-webkit-box-shadow: 0px 2px 3px #555;
 		-moz-box-shadow: 0px 2px 3px #555;
 		-webkit-border-radius: 10px;
@@ -13,8 +16,8 @@ form {
 	
 }
 
+
 input[type=text], input[type=password]{
-	color:white;
 	height: 20px;
     min-width: 150px;
 	width:100px;
@@ -25,14 +28,15 @@ input[type=text], input[type=password]{
 
  input[type=text]:focus, input[type=password]:focus{
 		background: #2171a3;
-		color:white;
 	}
 
-span {
-color:red
+.btn-subscribe {
+padding-right:10px;
+
 }
-	
-.btn-login, .btn-subscribe {
+
+.btn-subscribe, .btn-back {
+display: inline;
 width : 25%; 
 margin : auto; 
   background: #686868 ;
@@ -49,9 +53,3 @@ margin : auto;
   padding: 10px 10px 10px 10px;
   text-decoration: none;
 }
-
-.btn-login:hover , .btn-subscribe:hover {
-  background: #2171a3;
-  text-decoration: none;
-}
-
