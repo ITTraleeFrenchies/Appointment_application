@@ -1,42 +1,38 @@
-h3 {
-float:left;
-padding-left:20px;
-}
-body {
-	font: 17px Tahoma, Helvetica, Arial, Sans-Serif;
-}
+
 form {
 		box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7); 
-		background: #222; 
+	 background: #222; 
 		-webkit-box-shadow: 0px 2px 3px #555;
 		-moz-box-shadow: 0px 2px 3px #555;
 		-webkit-border-radius: 10px;
 		-moz-border-radius: 10px;
 		color : #A0A0A0;
+		padding-bottom:3%;
 	
 }
 
-
 input[type=text], input[type=password]{
+	color:white;
 	height: 20px;
     min-width: 150px;
 	width:100px;
 	border-radius: 5px;
   	background: #474747;
+  	  font-size: 15px;
 
 }
 
  input[type=text]:focus, input[type=password]:focus{
 		background: #2171a3;
+		color:white;
+
 	}
 
-.btn-subscribe {
-padding-right:10px;
-
+span {
+color:red
 }
-
-.btn-subscribe, .btn-back {
-display: inline;
+	
+.btn-login, .btn-subscribe {
 width : 25%; 
 margin : auto; 
   background: #686868 ;
@@ -52,4 +48,15 @@ margin : auto;
   font-size: 15px;
   padding: 10px 10px 10px 10px;
   text-decoration: none;
+}
+
+.btn-login:hover , .btn-subscribe:hover {
+  background: #2171a3;
+  text-decoration: none;
+}
+.part_align label {
+float: left;
+width: 10em;
+margin-right: 1em;
+text-align: right;
 }
