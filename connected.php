@@ -6,9 +6,8 @@ include('session.php');
 	<head>
 		<title>Student Application : Appointment</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<!--<link rel="stylesheet" href="style/all_style.css" type="text/css">
+		<link rel="stylesheet" href="style/all_style.css" type="text/css">
 		<link rel="stylesheet" href="style/connected.css" type="text/css">
-		-->	
 		
 	</head>
 	<body>
@@ -113,7 +112,7 @@ include('session.php');
 					
 					
 			</div>
-			<b id="logout"><a href="logout.php">Disconnect</a></b>
+			<b id="logout"><a href="logout.php" style="text-decoration: none;"><div class="btn-disconnect"> Disconnect</div></a></b>
 		</section>
 			
 			

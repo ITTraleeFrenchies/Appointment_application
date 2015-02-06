@@ -1,14 +1,15 @@
 
-
-
-
 body {
 	text-align: center;
 	background: #474747 url(images/noisy-texture.png);
 	width:100%;
-
+		font: 17px Tahoma, Helvetica, Arial, Sans-Serif;
 }
-img {
+
+p {
+	font: 15px Tahoma, Helvetica, Arial, Sans-Serif;
+
+}img {
 float:left;
 }
 
@@ -30,7 +31,6 @@ h1 {
 }
 h2 {
 	color : #0B3861;
-	text-shadow: 0px 2px 3px #555;
 	font: 20px Tahoma, Helvetica, Arial, Sans-Serif;
 }
 

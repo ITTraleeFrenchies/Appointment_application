@@ -37,4 +37,7 @@
 		mysqli_close($connection); // Closing Connection
 		}
 	}
+	else if(isset($_POST['submit_subscribe'])){
+		header("location: subscribe.php"); // Redirecting To Other Page
+	}
 ?>	
