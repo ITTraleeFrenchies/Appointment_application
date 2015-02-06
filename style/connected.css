@@ -85,7 +85,7 @@ article.tabs section h2
 select {
 
    background-color:#BDBDBD;
-   width: 180px;
+   min-width: 100px;
    padding: 5px;
    font-size: 16px;
    border: 1px solid #ccc;
@@ -132,5 +132,12 @@ select {
 	margin-right:50%;
 	position: relative;
 	width:200px;
+	 background: #222;
 
+}
+.part_align label {
+float: left;
+width: 10em;
+margin-right: 1em;
+text-align: right;
 }

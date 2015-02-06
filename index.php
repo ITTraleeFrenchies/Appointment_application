@@ -5,26 +5,6 @@
 	if(isset($_SESSION['tnumber'])){
 		header("location: connected.php");
 	}
-
-	$ch = curl_init("http://www.example.com/");
-	$fp = fopen("example_homepage.txt", "w");
-
-	curl_setopt($ch, CURLOPT_FILE, $fp);
-	curl_setopt($ch, CURLOPT_HEADER, 0);
-
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	$server_output = curl_exec ($ch);
-	// further processing ....
-	if ($server_output == "OK") { 
-		$error = "coucou";
-	}
-
-
-
-	curl_exec($ch);
-	curl_close($ch);
-	fclose($fp);
-	
 ?>
 <!DOCTYPE html>
 <html>

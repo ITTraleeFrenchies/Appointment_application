@@ -1,4 +1,29 @@
+<?php
+/* =================  We include the script in order to retrieve data  ====================== */
+	include('extract_busy_time.php'); 
 
+		function display($user, $password, $file){
+			loadUser($user, $password, $file);
+			$select = file_get_contents($file);
+			$lines = explode("\n", $select);
+			echo "Busy Times : <br>";
+			foreach($lines as $line){
+				if(substr( $line, 0, 8 ) == "FREEBUSY" ){
+					$dates = explode(":",$line);
+					$type = explode("=",$dates[0]);
+					if($type[1] == "BUSY" || $type[1] == "BUSY-UNAVAILABLE") $type[1]="Busy";
+					if($type[1] == "BUSY-TENTATIVE") $type[1]="Waiting for validation";
+					echo "Day : ".substr($dates[1],6,2)."/".substr($dates[1],4,2)."/".substr($dates[1],0,4).
+					" Time : ".substr($dates[1],9,2).".".substr($dates[1],11,2)." - ".substr($dates[1],26,2).".".substr($dates[1],28,2).
+					" Status : ".$type[1]."<br>";
+				}
+			}
+		}
+
+
+
+
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,6 +32,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link rel="stylesheet" href="style/all_style.css" type="text/css">
 		<link rel="stylesheet" href="style/connected.css" type="text/css">
+
+		<script type="text/javascript">
+			function getdata(){
+				var myval = document.getElementById("service").value;
+				var i ="";	
+				if(myval==1){ i = "<?php echo display('dyslexia','testproj15dysl','content_dyslexia.txt'); ?>";}
+				else if (myval==2){ i = "<?php echo display('counsellor','testproj15coun','content_counsellor.txt'); ?>";}
+				else if (myval==3){ i = "<?php echo display('access','testproj15accs','content_access.txt'); ?>";}
+				document.getElementById("display").innerHTML=i;
+			}
+		</script>
 	</head>
 	<body>
 		<section>
@@ -19,92 +55,137 @@
 					  <div class="mask"></div>
 				</div>
 				<h2>Appointment Application</h2>
+
 					<article class="tabs">
-						<section id="tab1">
-							<p>
-								<h2><a href="#tab1">Make an appointment</a></h2>
-								<label for="service">Select service</label>
-								<select name="service">
-								  <option value="default">default</option>
-								</select>  
-								  <table class="tg">
-									  <tr>
-										<th class="tg-031e">Name</th>
-										<th class="tg-031e">8</th>
-										<th class="tg-031e">9</th>
-										<th class="tg-031e">10</th>
-										<th class="tg-031e">11</th>
-										<th class="tg-031e">12</th>
-										<th class="tg-031e">13</th>
-										<th class="tg-031e">14</th>
-										<th class="tg-031e">15</th>
-										<th class="tg-031e">16</th>
-										<th class="tg-031e">17</th>
-										<th class="tg-031e">18</th>
-									  </tr>
-									  <tr>
-										<td class="tg-031e"></td>
-										<td class="tg-031e"></td>
-										<td class="tg-031e"></td>
-										<td class="tg-031e"></td>
-										<td class="tg-031e"></td>
-										<td class="tg-031e"></td>
-										<td class="tg-031e"></td>
-										<td class="tg-031e"></td>
-										<td class="tg-031e"></td>
-										<td class="tg-031e"></td>
-										<td class="tg-031e"></td>
-										<td class="tg-031e"></td>
-									  </tr>
-								</table>
+						<div class="part_align">
+						<form action="" method="post" name="form" id="id_form">
+							<section id="tab1">
+									<p>
+										<h2><a href="#tab1">Make an appointment</a></h2>
+										<label for="service">Select service</label>
+										<select name="service">
+										  <option value="Health Centre">Health Centre</option>
+										  <option value="Careers Office">Careers Office</option>
+										  <option value="Chaplaincy">Chaplaincy</option>
+										  <option value="Counselling">Counselling</option>
+										  <option value="Access Office">Access Office</option>
+									 	  <option value="Students Union">Students Union</option>
+									 	  <option value="Sports Office">Sports Office</option>
+									 	  <option value="Dyslexia Support Office">Dyslexia Support Office</option>
+									 	  <option value="Orientation">Orientation</option>
+									 	  <option value="Charities Commitee">Charities Commitee</option>
+										</select>  
+										  <br>
+										  <br>
+										<br>
+											<label for="date">Date</label>		
+										<select id='date'>
+											<?php 
+												date_default_timezone_set('Europe/Dublin');
+												 $date = date('Y-m-d');
+												// $date_in_2_weeks =  date('l jS \of F Y ',strtotime('+2 weeks'));
+												$day=1;
+												 while($day <= 12 ){
+												 	$date=date('Y-m-d',strtotime('+'.$day .' days'));
+												 	$day_letters = date('D',strtotime($date));	
+												 //	$date=date('l jS \of F Y ',strtotime('+'.$day .' days'));
+												 	if($day_letters != 'Sat' && $day_letters != 'Sun'){
+												 		 //$date = date_format($date,'l jS \of F Y ');
+												 		echo'<option value=" ='. $date . '">' . $date .'</option>';
+												 	}
+													$day++;
+												 }
+											?>
+										</select>
+										
+										<br>	
+										<label for="start">Start</label>		
+										<select id='time_start'>
+											<?php 
+											for($hour = 8; $hour < 17; $hour++){
+												$minutes =0;
+												$minutes = str_pad($minutes, 2, '0', STR_PAD_LEFT);
+												 while( $minutes < 60 ){
+												 	if($hour <=10){
+												 		$hour = str_pad($hour, 2, '0', STR_PAD_LEFT);
+												 	}
+												 	 echo'<option value=" ='. $hour . ' ":" '.$minutes.'">' . $hour .':' .$minutes . '</option>';
+												 	 $minutes+=15;
+												 	}
+												} 
+											?>
+										</select>
+										<br>	
+										<label for="End">End</label>	
+										<select id='time_end'>
+											<?php 
+											for($hour = 8; $hour <= 17; $hour++){
+												$minutes =15;
+												if($hour == 17){
+														$minutes =0;
+														$minutes = str_pad($minutes, 2, '0', STR_PAD_LEFT);
+													 echo'<option value=" ='. $hour . ' ":" '.$minutes.'">' . $hour .':' .$minutes . '</option>';
+												}else {
+													while( $minutes < 60 ){
+												 	if($hour <=10){
+												 		$hour = str_pad($hour, 2, '0', STR_PAD_LEFT);
+												 	}
+												 	 echo'<option value=" ='. $hour . ' ":" '.$minutes.'">' . $hour .':' .$minutes . '</option>';
+												 	 $minutes+=15;
+												 	}
+												}
+											}
+											?>
+										</select>
+										<br>	
+									
+										<div class="btn-submit"> Submit </div>
+										<br>
+									</p>
 								
-								<label for="time">Select the time</label>								
-								<select name="time">
-								  <option value="default">default</option>
-								</select>  
-								<br>
-								<div class="btn-submit"> Submit </div>
-								<br>
-							</p>
-						</section>
+							</section>
+						</form>
 					
-					<section id="tab2">
-						<h2><a href="#tab2">History appointments</a></h2>
-						<br>
-						<br>
-								<label for="filter">Filter</label>								
-								<select name="filter">
-								  <option value="waiting">waiting</option>
-								  <option value="done">done</option>
-								  <option value="achieved">achieved</option>
-								</select>  
-						<br>
-						<table class="tg">
-						  <tr>
-							<th class="tg-031e">Appointment</th>
-							<th class="tg-031e">Service</th>
-							<th class="tg-031e">State</th>
-							<th class="tg-031e">Date</th>
-						  </tr>
-						  <tr>
-							<td class="tg-031e"></td>
-							<td class="tg-031e"></td>
-							<td class="tg-031e"></td>
-							<td class="tg-031e"></td>
-						  </tr>
-						  <tr>
-							<td class="tg-031e"></td>
-							<td class="tg-031e"></td>
-							<td class="tg-031e"></td>
-							<td class="tg-031e"></td>
-						  </tr>
-						</table>
-						<br>
-						<br>
-						<br>
-						<br>
-						
-					</section>
+						<section id="tab2">
+							<h2><a href="#tab2">History appointments</a></h2>
+							<br>
+							<br>
+									<label for="filter">Filter</label>								
+									<select name="filter">
+									  <option value="waiting">waiting</option>
+									  <option value="done">done</option>
+									  <option value="achieved">achieved</option>
+									</select>  
+							<br>
+							<table class="tg">
+							  <tr>
+								<th class="tg-031e">Appointment</th>
+								<th class="tg-031e">Service</th>
+								<th class="tg-031e">State</th>
+								<th class="tg-031e">Date</th>
+							  </tr>
+							  <tr>
+								<td class="tg-031e"></td>
+								<td class="tg-031e"></td>
+								<td class="tg-031e"></td>
+								<td class="tg-031e"></td>
+							  </tr>
+							  <tr>
+								<td class="tg-031e"></td>
+								<td class="tg-031e"></td>
+								<td class="tg-031e"></td>
+								<td class="tg-031e"></td>
+							  </tr>
+							</table>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+						</section>
+						</div>
 
 			</article>
 			</div>
