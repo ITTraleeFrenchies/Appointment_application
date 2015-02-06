@@ -31,11 +31,11 @@
 								<br>
 								<br>
 								<label for="tnumber">T-number</label>
-								<input type="text" name="tnumber" placeholder="tnumber">
+								<input type="text" name="tnumber" placeholder="tnumber" maxlength="9">
 								<br>
 								<br>
 								<label for="pin">Pin</label>
-							    <input type="password" name="pin" placeholder="*****"/>
+							    <input type="password" name="pin" placeholder="*****" maxlength="5"/>
 								<br>
 								<br>
 								<input name="submit_login" class="btn-login" value="login" type="submit">

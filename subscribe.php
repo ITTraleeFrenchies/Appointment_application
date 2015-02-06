@@ -105,38 +105,38 @@
 						<label>
 							<select name="selectCounty">
 								<option  selected disabled value="select">Select a county </option>
-							   <option value="Cork"> Cork</option>
-							   <option value="Galway"> Galway</option>
-							   <option value="Mayo"> Mayo</option>
-							   <option value="Donegal"> Donegal</option>
-							   <option value="Kerry"> Kerry</option>
-								<option value="Tpperary"> Tipperary</option>
-								<option value="Clare"> Clare</option>
-								<option value="Tyrone"> Tyrone</option>
-								<option value="Antrim"> Antrim</option>
-								<option value="Limerick"> Limerick</option>
-								<option value="Roscommon"> Roscommon</option>
-								<option value="Down"> Down</option>
-								<option value="Wexford"> Wexford</option>
-								<option value="Meath"> Meath</option>
-								<option value="Londonderry"> Londonderry</option>
-								<option value="kilkenny"> Kilkenny</option>
-								<option value="Wicklow"> Wicklow</option>
-								<option value="Offaly"> Offaly</option>
+						  <option value="Antrim"> Antrim</option>
+								<option value="Armagh"> Armagh</option>
+								<option value="Carlow"> Carlow</option>
 								<option value="Cavan"> Cavan</option>
+							   <option value="Cork"> Cork</option>
+							   <option value="Clare"> Clare</option>
+							   <option value="Donegal"> Donegal</option>
+							   <option value="Down"> Down</option>
+							   <option value="Dublin"> Dublin</option>
+							   <option value="Fermanagh"> Fermanagh</option>
+							   <option value="Galway"> Galway</option>
+							    <option value="Kerry"> Kerry</option>
+							   	<option value="Kildare"> Kildare</option>
+							     <option value="kilkenny"> Kilkenny</option>
+							   	<option value="Laois"> Laois</option>
+								<option value="Leitrim"> Leitrim</option>
+							      <option value="Limerick"> Limerick</option>
+							     <option value="Londonderry"> Londonderry</option>
+							  	<option value="Longford"> Longford</option>
+								<option value="Louth"> Louth</option>
+							   <option value="Mayo"> Mayo</option>
+							   <option value="Meath"> Meath</option>
+							   <option value="Monaghan"> Monaghan</option>
+							   <option value="Offaly"> Offaly</option>
+							 <option value="Roscommon"> Roscommon</option>
+								<option value="Sligo"> Sligo</option>
+								<option value="Tpperary"> Tipperary</option>
+								<option value="Tyrone"> Tyrone</option>
 								<option value="Waterford"> Waterford</option>
 								<option value="Westmeath"> Westmeath</option>
-								<option value="Sligo"> Sligo</option>
-								<option value="Laois"> Laois</option>
-								<option value="Kildare"> Kildare</option>
-								<option value="Fermanagh"> Fermanagh</option>
-								<option value="Leitrim"> Leitrim</option>
-								<option value="Armagh"> Armagh</option>
-								<option value="Monaghan"> Monaghan</option>
-								<option value="Longford"> Longford</option>
-								<option value="Dublin"> Dublin</option>
-								<option value="Carlow"> Carlow</option>
-								<option value="Louth"> Louth</option>
+								<option value="Wexford"> Wexford</option>
+							<option value="Wicklow"> Wicklow</option>
 							</select>
 							<span class="required"> * </span>
 						</label>
@@ -167,12 +167,12 @@
 						<label for="disability">Indicate if you are</label>
 						<label>
 							<select name="disability" name="selectDisability">
-								<option  selected disabled value="select">Select a term </option>
-							   <option value="none"> None</option>
-							   <option value="none"> Student with a disability</option>
-							   <option value="none"> Student with a learning difficulty</option>
-							   <option value="none"> Member of the travelling community</option>
-							   <option value="none"> Pathfinder Participant</option>
+							<option  selected disabled value="select">Select a term </option>
+							   <option value="None"> None</option>
+							   <option value="Student with a disability"> Student with a disability</option>
+							   <option value="Student with a learning difficulty"> Student with a learning difficulty</option>
+							   <option value="Member of the travelling community"> Member of the travelling community</option>
+							   <option value="Pathfinder Participant"> Pathfinder Participant</option>
 							</select>
 							<span class="required"> * </span>
 						</label>   	

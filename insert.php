@@ -49,7 +49,8 @@ var dateObject = $(this).datepicker('getDate');
 			$link = mysqli_connect($servername, $username, $password, $dbname);
 			$sql_check = "select * from user where tnumber='" . $tnumber ."'";
 			$query_check = mysqli_query($link,$sql_check);
-			if ($query_check) {
+			  $rowcount=mysqli_num_rows($query_check);
+			if ($rowcount == 1) {
 					$error = "This account already exists";
 			}
 			else {
