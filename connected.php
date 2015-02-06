@@ -1,14 +1,12 @@
-<?php
-include('session.php');
-?>
+
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>Student Application : Appointment</title>
+		<!-- ============ Viewport basics for mobile devices ================= -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link rel="stylesheet" href="style/all_style.css" type="text/css">
 		<link rel="stylesheet" href="style/connected.css" type="text/css">
-		
 	</head>
 	<body>
 		<section>
@@ -16,11 +14,11 @@ include('session.php');
 				<img src="images/rsz_ittralee_icone.png" alt="ITtralee" width="100" height="100" >
 				<h1>Institute of Technology of Tralee</h1>
 				
+				<!-- ============ Separator ================= -->
 				<div class="or-spacer">
 					  <div class="mask"></div>
 				</div>
 				<h2>Appointment Application</h2>
-				
 					<article class="tabs">
 						<section id="tab1">
 							<p>
@@ -110,11 +108,9 @@ include('session.php');
 
 			</article>
 			</div>
+			<!-- ============ Link to logout.php to disocnnect the user ================= -->
 			<b id="logout"><a href="logout.php" style="text-decoration: none;"><div class="btn-disconnect"> Disconnect</div></a></b>
 		</section>
-			
-			
-		
 		<div class="footer">
 			<p>2015 - Institute of Technology of Tralee </p>
 		</div>

@@ -13,7 +13,6 @@ Bachelor of Business in Marketing
 Bachelor of Business (Honours) in Management
 Bachelor of Business in Management
 Master of Business by Research (Business Studies Dept)
-
 --------Creative Media and Information Technology---------
 Post Graduate Diploma in Business in Business Administration
 Certificate in Animation
@@ -30,7 +29,6 @@ Bachelor of Arts (Honours) in Design for Interactive Media
 Bachelor of Arts (Honours) in Music Technology
 Higher Certificate in Business in Office Information Systems
 Bachelor of Arts (Honours) in TV, Radio and New Media Broadcasting
-
 ----------------Hotel, Culinary and Tourism---------------
 Certificate in Culinary Skills
 Certificate in Front Office and Accommodation Operations
@@ -51,7 +49,6 @@ Bachelor of Arts in Hotel Management
 Bachelor of Arts (Honours) in Travel and Tourism Management
 Bachelor of Arts in Travel and Tourism Management
 Social Sciences
-
 ----------------------Social Sciences---------------------
 Certificate in Language for Export Sales and Marketing
 Bachelor of Arts (Honours) in Early Childhood Care and Education
@@ -63,22 +60,18 @@ Master of Arts (Humanities Dept) - by Research and Thesis
 Doctor of Philosophy (Humanities Dept) - by Research and Thesis
 Bachelor of Arts (Honours) in Youth and Community Work Practice
 Bachelor of Arts in Youth and Community Work Practice
-
 -------------------Agricultural Engineering---------------
 Bachelor of Engineering in Agricultural Engineering
 Bachelor of Science (Honours) in Agricultural Engineering Management
-
 ----------------Construction/Civil Engineering------------
 Bachelor of Engineering in Civil and Environmental Engineering
 Bachelor of Science (Honours) in Construction Management
 Bachelor of Science in Energy Technology and The Built Environment
 Certificate in Quality Management, Tools and Techniques in Practice
 Bachelor of Science (Honours) in Renewable Energy and Energy Management
-
 -----------------Engineering Apprenticeship---------------
 National Craft Certificate - Agricultural Mechanics
 Certificate of Attendance in Carpentry and Joinery
-
 -------------------Manufacturing Engineering--------------
 Mechanical and Manufacturing OR Mechanical and Mechatronic
 Bachelor of Engineering in Manufacturing and Mechatronics Engineering
@@ -86,7 +79,6 @@ Certificate in Industrial Instrumentation and Automation
 Bachelor of Science (Honours) in Manufacturing Engineering Management
 Master of Engineering (Manufacturing Engineering Dept) - by Research and Thesis
 Bachelor of Engineering in Production Engineering
-
 ------------Biological and Pharmaceutical Sciences--------
 Bachelor of Science in Agricultural Science
 Higher Certificate in Science in Biological and Environmental Studies
@@ -96,7 +88,6 @@ Bachelor of Science in Food Science with Innovation
 Bachelor of Science in Pharmaceutical Science
 Bachelor of Science (Honours) in Wildlife Biology
 Bachelor of Science in Advanced Wood Technology for Sustainable Construction
-
 ------------------------Computing-------------------------
 Bachelor of Science (Honours) in Computing with Mobile App Development
 Bachelor of Science in Computing with Mobile App Development
@@ -115,7 +106,6 @@ Bachelor of Science (Honours) in Computing with Software Development
 Bachelor of Science in Computing in Software Development
 Bachelor of Science (Honours) in Computing in Software Development
 Master of Science in Educational Technologies
-
 -------------------Health & Leisure Studies---------------
 Bachelor of Science (Honours) in Health and Leisure with Massage
 Bachelor of Science (Honours) in Adapted Physical Activity
@@ -131,7 +121,6 @@ Bachelor of Arts in Outdoor Learning
 Bachelor of Science (Honours) in Sports Development
 Bachelor of Science (Honours) in Wellness
 Bachelor of Science (Honours) in Physical Education
-
 -----------------Nursing & Health Care Sciences-----------
 Diploma in Wound Care Management
 Diploma in Developing Safe Environments in Health and Social Care
@@ -142,7 +131,6 @@ Bachelor of Science (Honours) in Mental Health Nursing
 Master of Science in Nursing
 Master of Science in Nursing - by Research and Thesis
 Certificate in Wound Care Management
-
 -----------------------Other Courses----------------------
 Certificate in Adapted Physical Activity Communication, Policy and Provision
 Certificate in Universal Physical Activity Programming

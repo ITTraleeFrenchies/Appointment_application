@@ -1,11 +1,14 @@
 <?php
+/* =================  Redirect the page email.php to index.php after 3 seconds   ====================== */	
 header( "refresh:3;url=index.php" );
 include "insert.php";
 
+/* =================  We retrieve the data  ====================== */	
 	$tnumber = $_SESSION['insert'];
 	$email = $tnumber . "@z3students.ittralee.ie";
 	$pin =  substr($tnumber, -5); 
   	
+ /* =================  We send an email to the student   ====================== */	
   	$to      = $email;
 	$subject = 'Registering to Appointment Application of the Institute of Technology of Tralee';
 	$message = 'Hello ' . $tnumber . ' , <br /> You are now registered in the appointment application
@@ -16,7 +19,7 @@ include "insert.php";
 	 mail($to, $subject, $message, $headers);
 	
 
-
+/* =================  Code HTML of email.php   ====================== */	
 echo '<!DOCTYPE html>
 <head>
 		<title>Student Application : Appointment</title>
@@ -49,5 +52,6 @@ echo '<!DOCTYPE html>
 </body>
 </html>
 ';
+/* =================  We don't need a connected session anymore ====================== */
 session_destroy();
 ?>	

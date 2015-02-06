@@ -1,4 +1,5 @@
 <script>
+/* ============ Insert a calendar to an input button ================= */
 var dateObject = $(this).datepicker('getDate'); 
 
 </script>
@@ -10,21 +11,17 @@ var dateObject = $(this).datepicker('getDate');
 	$username = "root";
 	$password = "";
 	$dbname = "appointment_db";
-
 	$error='';
 
-
 	if (isset($_POST['submit_subscribe'])) {
-
-		echo $_POST['datebirth'];
-
+		  /* ============ check if fields are empty================= */
 		if (empty($_POST['tnumber']) || empty($_POST['firstname']) || empty($_POST['lastname'])
 			|| empty($_POST['datebirth']) || empty($_POST['city']) || empty($_POST['selectCounty']) || empty($_POST['courses'])
 			|| empty($_POST['disability']) || empty($_POST['disabilityS'] )) {
 			$error = "Please complete all the mandatory field";
 		}
 		else{
-
+  		/* ============ retrieve data for indentification================= */
 		$tnumber = $_POST["tnumber"];
 		$firstname = $_POST["firstname"];
 		$lastname = $_POST["lastname"];
@@ -42,30 +39,45 @@ var dateObject = $(this).datepicker('getDate');
 		    if( !empty($_POST['comment'])){
 		    	$comment = $_POST['comment'];
 		    }
-
-			$all_check ="{";
-
-			foreach ($name as $disabilityS){
-			$all_check= $all_check . $disabilityS . ",";
+		    /* ============identifications for database================= */
+			$servername = "localhost";
+			$username = "root";
+			$password = "";
+			$dbname = "appointment_db";
+			 /* ============ Create connection================= */
+			   /* ============ check if an user alreadye xists with the tnumber given================= */
+			$link = mysqli_connect($servername, $username, $password, $dbname);
+			$sql_check = "select * from user where tnumber='" . $tnumber ."'";
+			$query_check = mysqli_query($link,$sql_check);
+			if ($query_check) {
+					$error = "This account already exists";
 			}
+			else {
 
+			 /* ============ We insert the several disabilities as number into the database ================= */
+			$all_check ="{";
+				foreach ($name as $disabilityS){
+					$all_check= $all_check . $disabilityS . ",";
+				}
 			$all_check = substr($all_check,0, -1); 
 			$all_check = $all_check . "}";
-
 			$_SESSION['insert'] = $tnumber;
 
-			// Establishing Connection with Server by passing server_name, user_id and password as a parameter
-			$connection = mysqli_connect($servername, $username, $password, $dbname);
-			
-			$sql="insert into user values('". $tnumber . "','" . $firstname . "','" . $lastname  ."', null, null"
+			 /* ============ We execute the insert and redirect to email.php================= */
+			$sql_insert="insert into user values('". $tnumber . "','" . $firstname . "','" . $lastname  ."', null, null"
 			.",'" . $date ."','" . $address1 ."','" . $address2 ."','" . $city ."','" . $county ."','" . $course ."','" . $disability ."','" . $all_check ."','" . $contact ."','". $comment . "')";
-			$query = mysqli_query($connection,$sql);
-				if ($query) {
-					header("location: email.php"); // Redirecting To Other Page
-	
+			$query_insert = mysqli_query($link,$sql_insert);
+			
+				if ($query_insert) {
+					header("location: email.php");
 				} else {
-					$error = "Error : Invalid Tnumber	";
+					$error = "Please complete correctly all the mandatory field";
 				}
+			}
+		   
+
+
+		   
 			
 		}
 

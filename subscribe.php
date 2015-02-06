@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="style/subscribe.css" type="text/css">
 		<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css' >
 		<script>
+		 /* ============ We put the cursor of the mouse at the first position in the textarea ================= */
 			function setCursorPos(){
 					setCaretToPos(document.getElementById("comment"), 0);
 			}
@@ -29,12 +30,11 @@
 					}
 			}
 			function setCaretToPos (input, pos) {
-			setSelectionRange(input, pos, pos);
+				setSelectionRange(input, pos, pos);
 			}
 
 
-		/* ======== DATE BIRTH ======== */
-				
+		 /* ============ We cretae the calendar for the datebrth input ================= */
 			    var datefield=document.createElement("input");
 			    datefield.setAttribute("type", "date");
 			    if (datefield.type!="date"){ //if browser doesn't support input type="date", load files for jQuery UI Date Picker
@@ -56,7 +56,7 @@
 			<div id="content">
 			<img src="images/rsz_ittralee_icone.png" alt="ITtralee" width="100" height="100" />
 			<h1>Institute of Technology of Tralee</h1>
-			
+			 <!-- ============ Seperator ================= */ -->
 			<div class="or-spacer">
 				  <div class="mask"></div>
 			</div>
@@ -142,20 +142,22 @@
 						</label>
 						<br>
 						<br>
+							 <!-- ============ We read the courses_list.txt in order to retrieve the courses=================  -->
 						<label for="courses">Select your course</label>
 						<label>
 							 <select name="courses">
 								<option selected disabled>Select Department</option>
 						       <?php
-								$select = file_get_contents('files/Courses_list.txt');
-								$lines = explode("\n", $select);
-								foreach($lines as $line) {
-									if(substr( $line, 0, 4 ) !== "----"){
-									echo '<option value="'.$line.'">'.$line.'</option>';
-									}else{									
-									echo '<option disabled>'.$line.'</option>';
+									$select = file_get_contents('files/Courses_list.txt');
+									$lines = explode("\n", $select);
+									foreach($lines as $line) {
+										if(substr( $line, 0, 4 ) != "----" ){
+											echo '<option value="'.$line.'">'.$line.'</option>';
+										}
+										else{									
+											echo '<option disabled>'.$line.'</option>';
+										}
 									}
-								}
 							    ?>
 						    </select>
 						    <span class="required"> * </span>
@@ -215,9 +217,10 @@
 						 <textarea id ="comment" name = "comment" rows = "3"cols = "80" value="insert your comment here" onclick="setCursorPos()">
 		              	</textarea>
 		             </div>
-		              	<p style="color:red;"> fields marqued by this asterisk * has to be filled. </p>
+		              	<p> <span class="required"> * </span> fields marqued by this star have to be filled. </p>
 		              	<br>
 		              	<br>
+		              		 <!-- ============ Show errors ================= */ -->
 						<span class="error"><?php echo $error; ?></span>
 						<br>
 						<br>

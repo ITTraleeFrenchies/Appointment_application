@@ -1,5 +1,7 @@
 <?php
-	include('script_sql_index.php'); // Includes Login Script
+/* =================  We include the script in order to check the connection  ====================== */
+	include('script_sql_index.php'); 
+	/* =================  If a session is already openned : a user is connected to the application   ====================== */
 	if(isset($_SESSION['tnumber'])){
 		header("location: connected.php");
 	}
@@ -12,8 +14,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link rel="stylesheet" href="style/all_style.css" type="text/css">
 		<link rel="stylesheet" href="style/index.css" type="text/css">
-		<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-		
 	</head>
 	<body>
 		<section>
@@ -21,6 +21,7 @@
 				<img src="images/rsz_ittralee_icone.png" alt="ITtralee" width="100" height="100" >
 				<h1>Institute of Technology of Tralee</h1>
 				
+				<!-- ============ Separator ================= -->
 				<div class="or-spacer">
 					  <div class="mask"></div>
 				</div>
@@ -42,6 +43,7 @@
 								<br>
 							</div>
 					</form>
+					<!-- ============ Display an error if the connection did not work ================= -->
 					<span><?php echo $error; ?></span>
 					
 			</div>
