@@ -68,31 +68,37 @@
 						<br>
 						<label for="tnumber">T-number</label>
 						<input type="text" name="tnumber" maxlength="9" placeholder="tnumber" >
-						 <span class="asterisk_input">  </span>  
+						<span class="required"> * </span>
 						<br>
 						<br>
 						<label for="firstname">Firstname</label>
 					    <input type="text" name="firstname" maxlength="30" placeholder="firstname"/>
+					    <span class="required"> * </span>
 						<br>
 						<br>
 						<label for="lastname">Lastname</label>
 					    <input type="text" name="lastname" maxlength="30"placeholder="lastname"/>
+					    <span class="required"> * </span>
 						<br>
 						<br>
 						<label for="datebirth">Date of birth</label>
 						<input type="date" name="datebirth" size="20"/>
+						<span class="required"> * </span>
 						<br>
 						<br>
 						<label for="address1">Adress (first line)</label>
 					    <input type="text" name="address1" maxlength="100" placeholder="address"/>
+					    <span class="required"> * </span>
 						<br>
 						<br>
 						<label for="address2">Adress (second line)</label>
 					    <input type="text" name="address2" maxlength="100" placeholder="adress"/>
+					    <span class="required"> * </span>
 						<br>
 						<br>
 						<label for="city">City </label>
 					    <input type="text" name="city" maxlength="35" placeholder="city"/>
+					    <span class="required"> * </span>
 						<br>
 						<br>
 						<label for="counties">County</label>
@@ -132,6 +138,7 @@
 								<option value="Carlow"> Carlow</option>
 								<option value="Louth"> Louth</option>
 							</select>
+							<span class="required"> * </span>
 						</label>
 						<br>
 						<br>
@@ -143,10 +150,15 @@
 								$select = file_get_contents('files/Courses_list.txt');
 								$lines = explode("\n", $select);
 								foreach($lines as $line) {
+									if(substr( $line, 0, 4 ) !== "----"){
 									echo '<option value="'.$line.'">'.$line.'</option>';
+									}else{									
+									echo '<option disabled>'.$line.'</option>';
+									}
 								}
 							    ?>
-						    </select> 
+						    </select>
+						    <span class="required"> * </span>
 					    </label>
 						<br>
 						<br>
@@ -160,10 +172,13 @@
 							   <option value="none"> Member of the travelling community</option>
 							   <option value="none"> Pathfinder Participant</option>
 							</select>
+							<span class="required"> * </span>
 						</label>   	
 						<br>
 						<br>	
 					</div>
+					<br>
+					<br>
 					<div class="part_check_align">
 						<label>Please indicate below the nature of your disability by ticking the appropriate box(es)</label>
 						<br>
@@ -192,6 +207,7 @@
 						<br>
 						<label for="contact">Contact number</label>
 					    <input type="text" name="contact" maxlength="14" placeholder="+353000000000"/>
+					    <span class="required"> * </span>
 						<br>
 						<br>
 						<label for="comment" maxlength="500">Please specify disability supports required</label>
@@ -199,8 +215,10 @@
 						 <textarea id ="comment" name = "comment" rows = "3"cols = "80" value="insert your comment here" onclick="setCursorPos()">
 		              	</textarea>
 		             </div>
-						<br>
-						<span><?php echo $error; ?></span>
+		              	<p style="color:red;"> fields marqued by this asterisk * has to be filled. </p>
+		              	<br>
+		              	<br>
+						<span class="error"><?php echo $error; ?></span>
 						<br>
 						<br>
 						<a href="index.php" style="text-decoration: none;"><input class="btn-back" value="back" type="button"></a>

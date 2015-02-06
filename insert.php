@@ -21,7 +21,7 @@ var dateObject = $(this).datepicker('getDate');
 		if (empty($_POST['tnumber']) || empty($_POST['firstname']) || empty($_POST['lastname'])
 			|| empty($_POST['datebirth']) || empty($_POST['city']) || empty($_POST['selectCounty']) || empty($_POST['courses'])
 			|| empty($_POST['disability']) || empty($_POST['disabilityS'] )) {
-			$error = "tnumber, first name or last name are invalid";
+			$error = "Please complete all the mandatory field";
 		}
 		else{
 
@@ -60,13 +60,11 @@ var dateObject = $(this).datepicker('getDate');
 			$sql="insert into user values('". $tnumber . "','" . $firstname . "','" . $lastname  ."', null, null"
 			.",'" . $date ."','" . $address1 ."','" . $address2 ."','" . $city ."','" . $county ."','" . $course ."','" . $disability ."','" . $all_check ."','" . $contact ."','". $comment . "')";
 			$query = mysqli_query($connection,$sql);
-			echo $sql;
-			echo $query;
 				if ($query) {
 					header("location: email.php"); // Redirecting To Other Page
 	
 				} else {
-					$error = $query . "Error : Invalid Tnumber	";
+					$error = "Error : Invalid Tnumber	";
 				}
 			
 		}

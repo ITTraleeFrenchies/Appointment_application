@@ -33,7 +33,8 @@ color:red
 }
 	
 .btn-login, .btn-subscribe {
-width : 25%; 
+  
+width : 20%; 
 margin : auto; 
   background: #686868 ;
   background-image: -webkit-linear-gradient(top, #686868 , #686868 );
@@ -46,8 +47,7 @@ margin : auto;
   border-radius: 18px;
   color: #ffffff;
   font-size: 15px;
-  padding: 10px 10px 10px 10px;
-  text-decoration: none;
+  padding: 5px 5px 5px 5px;
 }
 
 .btn-login:hover , .btn-subscribe:hover {

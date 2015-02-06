@@ -1,9 +1,21 @@
 <?php
+header( "refresh:3;url=index.php" );
 include "insert.php";
-  	 $tnumber = $_SESSION['insert'];
+
+	$tnumber = $_SESSION['insert'];
 	$email = $tnumber . "@z3students.ittralee.ie";
+	$pin =  substr($tnumber, -5); 
+  	
+  	$to      = $email;
+	$subject = 'Registering to Appointment Application of the Institute of Technology of Tralee';
+	$message = 'Hello ' . $tnumber . ' , <br /> You are now registered in the appointment application
+	the Institute of Technology of Tralee. <br /> Your PIN is : ' . $pin ;
+	$headers = 'From:  webmaster.it.tralee.app@gmail.com' . "\r\n" .
+    'Reply-To:  webmaster.it.tralee.app@gmail.com' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+	 mail($to, $subject, $message, $headers);
 	
-session_destroy();
+
 
 echo '<!DOCTYPE html>
 <head>
@@ -17,7 +29,7 @@ echo '<!DOCTYPE html>
 <body>
 		<section>
 			<div id="content">
-				<img src="images/rsz_ittralee_icone.png" alt="ITtralee" >
+				<img src="images/rsz_ittralee_icone.png" alt="ITtralee" height="100" width="100">
 				<h1>Institute of Technology of Tralee</h1>
 				
 				<div class="or-spacer">
@@ -26,17 +38,16 @@ echo '<!DOCTYPE html>
 
 				<h2>Appointment Application</h2>
 					<div class="message">	  
-							<h2>Account created</h2>
-							<p>An email has been sent to your Zimbra address email :' . $email . '</p>
+							<p>An email has been sent to your Zimbra address email: ' . $email . '</p>
 					</div>
 				
 			</div>
 		</section>
 		<div class="footer">
-			<p>2015 - IT Tralee - Designed by Angele Demeurant and Aurelien Bigois </p>
+			<p>2015 - Institute of Technology of Tralee </p>
 		</div>
 </body>
 </html>
 ';
-
+session_destroy();
 ?>	

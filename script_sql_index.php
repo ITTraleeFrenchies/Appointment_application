@@ -27,8 +27,8 @@
 		// SQL query to fetch information of registerd users and finds user match.
 		$sql="select * from user where tnumber='$value_tnumber' AND pin='$value_pin'";
 		$query = mysqli_query($connection,$sql);
-		$rows = mysqli_num_rows($query);
-			if ($rows == 1) {
+		$worked = $query;
+			if (!$worked) {
 				$_SESSION['tnumber']= $value_tnumber;  // Initializing Session with value of PHP Variable
 				header("location: connected.php"); // Redirecting To Other Page
 			} else {

@@ -108,9 +108,7 @@ include('session.php');
 						
 					</section>
 
-					</article>
-					
-					
+			</article>
 			</div>
 			<b id="logout"><a href="logout.php" style="text-decoration: none;"><div class="btn-disconnect"> Disconnect</div></a></b>
 		</section>
@@ -118,7 +116,7 @@ include('session.php');
 			
 		
 		<div class="footer">
-			<p>2015 - IT Tralee - Designed by Angele Demeurant and Aurelien Bigois </p>
+			<p>2015 - Institute of Technology of Tralee </p>
 		</div>
 		
 	</body>
