@@ -24,29 +24,31 @@
 					  <div class="mask"></div>
 				</div>
 				<h2>Appointment Application</h2>
-				
 					<form action="" method="post" name="login">
-						<br>
-						<br>
-						<label for="tnumber">T-number</label>
-						<input type="text" name="tnumber" placeholder="tnumber">
-						<br>
-						<br>
-						<label for="pin">Pin</label>
-					    <input type="password" name="pin" placeholder="*****"/>
-						<br>
-						<br>
-						<input name="submit_login" class="btn-login" value="login" type="submit">
-						<input name="submit_subscribe" class="btn-subscribe" value="subscribe" type="submit">
-						<br>
+						<div class="part_align">
+								<br>
+								<br>
+								<label for="tnumber">T-number</label>
+								<input type="text" name="tnumber" placeholder="tnumber">
+								<br>
+								<br>
+								<label for="pin">Pin</label>
+							    <input type="password" name="pin" placeholder="*****"/>
+								<br>
+								<br>
+								<input name="submit_login" class="btn-login" value="login" type="submit">
+								<input name="submit_subscribe" class="btn-subscribe" value="subscribe" type="submit">
+								<br>
+							</div>
 					</form>
 					<span><?php echo $error; ?></span>
+					
 			</div>
 		</section>
 		
 		
 		<div class="footer">
-			<p>2015 - IT Tralee - Designed by Angele Demeurant and Aurelien Bigois </p>
+			<p>2015 - Institute of Technology of Tralee </p>
 		</div>
 		
 	</body>

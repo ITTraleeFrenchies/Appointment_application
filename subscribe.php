@@ -54,7 +54,7 @@
 <body>
 		<section>
 			<div id="content">
-			<img src="images/rsz_ittralee_icone.png" alt="ITtralee" width="100" height="100" >
+			<img src="images/rsz_ittralee_icone.png" alt="ITtralee" width="100" height="100" />
 			<h1>Institute of Technology of Tralee</h1>
 			
 			<div class="or-spacer">
@@ -67,15 +67,16 @@
 						<br>
 						<br>
 						<label for="tnumber">T-number</label>
-						<input type="text" name="tnumber" maxlength="9">
+						<input type="text" name="tnumber" maxlength="9" placeholder="tnumber" >
+						 <span class="asterisk_input">  </span>  
 						<br>
 						<br>
 						<label for="firstname">Firstname</label>
-					    <input type="text" name="firstname" maxlength="30"/>
+					    <input type="text" name="firstname" maxlength="30" placeholder="firstname"/>
 						<br>
 						<br>
 						<label for="lastname">Lastname</label>
-					    <input type="text" name="lastname" maxlength="30"/>
+					    <input type="text" name="lastname" maxlength="30"placeholder="lastname"/>
 						<br>
 						<br>
 						<label for="datebirth">Date of birth</label>
@@ -83,15 +84,15 @@
 						<br>
 						<br>
 						<label for="address1">Adress (first line)</label>
-					    <input type="text" name="address1" maxlength="100"/>
+					    <input type="text" name="address1" maxlength="100" placeholder="address"/>
 						<br>
 						<br>
 						<label for="address2">Adress (second line)</label>
-					    <input type="text" name="address2" maxlength="100"/>
+					    <input type="text" name="address2" maxlength="100" placeholder="adress"/>
 						<br>
 						<br>
 						<label for="city">City </label>
-					    <input type="text" name="city" maxlength="35"/>
+					    <input type="text" name="city" maxlength="35" placeholder="city"/>
 						<br>
 						<br>
 						<label for="counties">County</label>
@@ -141,10 +142,8 @@
 						       <?php
 								$select = file_get_contents('files/Courses_list.txt');
 								$lines = explode("\n", $select);
-								$i = 1;
 								foreach($lines as $line) {
-									echo '<option value="'.$i.'">'.$line.'</option>';
-									$i += 1;
+									echo '<option value="'.$line.'">'.$line.'</option>';
 								}
 							    ?>
 						    </select> 
@@ -192,7 +191,7 @@
 						<br>
 						<br>
 						<label for="contact">Contact number</label>
-					    <input type="text" name="contact" maxlength="14"/>
+					    <input type="text" name="contact" maxlength="14" placeholder="+353000000000"/>
 						<br>
 						<br>
 						<label for="comment" maxlength="500">Please specify disability supports required</label>
@@ -212,7 +211,7 @@
 			</div>
 		</section>
 		<div class="footer">
-			<p>2015 - IT Tralee - Designed by Angele Demeurant and Aurelien Bigois </p>
+			<p>2015 - Institute of Technology of Tralee </p>
 		</div>
 </body>
 </html>

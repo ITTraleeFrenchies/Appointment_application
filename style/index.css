@@ -54,4 +54,9 @@ margin : auto;
   background: #2171a3;
   text-decoration: none;
 }
-
+.part_align label {
+float: left;
+width: 10em;
+margin-right: 1em;
+text-align: right;
+}

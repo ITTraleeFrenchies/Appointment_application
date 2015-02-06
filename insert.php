@@ -16,6 +16,8 @@ var dateObject = $(this).datepicker('getDate');
 
 	if (isset($_POST['submit_subscribe'])) {
 
+		echo $_POST['datebirth'];
+
 		if (empty($_POST['tnumber']) || empty($_POST['firstname']) || empty($_POST['lastname'])
 			|| empty($_POST['datebirth']) || empty($_POST['city']) || empty($_POST['selectCounty']) || empty($_POST['courses'])
 			|| empty($_POST['disability']) || empty($_POST['disabilityS'] )) {
@@ -56,7 +58,7 @@ var dateObject = $(this).datepicker('getDate');
 			$connection = mysqli_connect($servername, $username, $password, $dbname);
 			
 			$sql="insert into user values('". $tnumber . "','" . $firstname . "','" . $lastname  ."', null, null"
-			."," . $date .",'" . $address1 ."','" . $address2 ."','" . $city ."','" . $county ."','" . $course ."','" . $disability ."','" . $all_check ."','" . $contact ."','". $comment . "')";
+			.",'" . $date ."','" . $address1 ."','" . $address2 ."','" . $city ."','" . $county ."','" . $course ."','" . $disability ."','" . $all_check ."','" . $contact ."','". $comment . "')";
 			$query = mysqli_query($connection,$sql);
 			echo $sql;
 			echo $query;
