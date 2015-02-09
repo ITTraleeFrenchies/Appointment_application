@@ -93,6 +93,7 @@
 						<br>
 						<label for="address2">Adress (second line)</label>
 					    <input type="text" name="address2" maxlength="100" placeholder="adress"/>
+					    <span class="required"> * </span>
 						<br>
 						<br>
 						<label for="city">City </label>
