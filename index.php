@@ -42,7 +42,6 @@
 								<br>
 							</div>
 					</form>
-					<?php echo $error; ?>
 					<!-- ============ Display an error if the connection did not work ================= -->
 					<span><?php echo $error; ?></span>
 					
