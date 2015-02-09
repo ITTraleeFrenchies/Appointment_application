@@ -64,17 +64,6 @@ Email: access@ittralee.ie
             // Download from 'example.com' to 'example.txt' 
             //http://studentmail.students.ittralee.ie:443/home/aurelien.bigois@z3students.ittralee.ie/inbox.rss
             //https://studentmail.students.ittralee.ie/
-            echo loadUser("dyslexia", "testproj15dysl", "content_dyslexia.txt" ); 
+           // echo loadUser("dyslexia", "testproj15dysl", "content_dyslexia.txt" ); 
             //echo cURLdownload("https://example.com/");
   ?> 
-
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Student Application : Appointment</title>
-	</head>
-	<body>
-
-	</body>
-	
-</html>

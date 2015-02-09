@@ -6,7 +6,7 @@ var dateObject = $(this).datepicker('getDate');
 
 <?php
 	 session_start();
-  
+    /* ============identifications for database================= */
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
@@ -39,11 +39,7 @@ var dateObject = $(this).datepicker('getDate');
 		    if( !empty($_POST['comment'])){
 		    	$comment = $_POST['comment'];
 		    }
-		    /* ============identifications for database================= */
-			$servername = "localhost";
-			$username = "root";
-			$password = "";
-			$dbname = "appointment_db";
+		  
 			 /* ============ Create connection================= */
 			   /* ============ check if an user alreadye xists with the tnumber given================= */
 			$link = mysqli_connect($servername, $username, $password, $dbname);
