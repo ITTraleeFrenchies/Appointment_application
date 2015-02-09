@@ -1,45 +1,45 @@
 <?php
 /* =================  We include the script in order to retrieve data  ====================== */
 	include('extract_busy_time.php'); 
-		$day_meeting="";
-		$timestart_meeting="";
-		$timeend_meeting="";
-		function display($user, $password, $file){
-			loadUser($user, $password, $file);
-			$select = file_get_contents($file);
-			$lines = explode("\n", $select);
-			echo "Busy Times : <br>";
+	$day_meeting="";
+	$timestart_meeting="";
+	$timeend_meeting="";
+	function display($user, $password, $file){
+		loadUser($user, $password, $file);
+		$select = file_get_contents($file);
+		$lines = explode("\n", $select);
+		echo "Busy Times : <br>";
 
-			$incr_array_busy_times=0;
-			$array_busy_times="";
-			foreach($lines as $line){
-				if(substr( $line, 0, 8 ) == "FREEBUSY" ){
-					$dates = explode(":",$line);
-					$type = explode("=",$dates[0]);
-					if($type[1] == "BUSY" || $type[1] == "BUSY-UNAVAILABLE") $type[1]="Busy";
-					if($type[1] == "BUSY-TENTATIVE") $type[1]="Waiting for validation";
-					$day_meeting=substr($dates[1],6,2)."/".substr($dates[1],4,2)."/".substr($dates[1],0,4);
+		$incr_array_busy_times=0;
+		$array_busy_times="";
+		foreach($lines as $line){
+			if(substr( $line, 0, 8 ) == "FREEBUSY" ){
+				$dates = explode(":",$line);
+				$type = explode("=",$dates[0]);
+				if($type[1] == "BUSY" || $type[1] == "BUSY-UNAVAILABLE") $type[1]="Busy";
+				if($type[1] == "BUSY-TENTATIVE") $type[1]="Waiting for validation";
+				$day_meeting=substr($dates[1],6,2)."/".substr($dates[1],4,2)."/".substr($dates[1],0,4);
 					
-					// ============= hours and minutes concatenated of each busy time ==========
-					$timestart_meeting=substr($dates[1],9,4);
-					$timeend_meeting=substr($dates[1],26,4);
+				// ============= hours and minutes concatenated of each busy time ==========
+				$timestart_meeting=substr($dates[1],9,4);
+				$timeend_meeting=substr($dates[1],26,4);
 					
-					// ============= hours and minutes separated of each busy time ==========
-					/*$timestart_meeting=substr($dates[1],9,2).".".substr($dates[1],11,2);
-					$timeend_meeting=substr($dates[1],26,2).".".substr($dates[1],28,2);*/
+				// ============= hours and minutes separated of each busy time ==========
+				/*$timestart_meeting=substr($dates[1],9,2).".".substr($dates[1],11,2);
+				$timeend_meeting=substr($dates[1],26,2).".".substr($dates[1],28,2);*/
 					
-					// =============== We put in an array all the busy meeting ================
-					echo "Day : ".$day_meeting." Time : ".$timestart_meeting." - ".$timeend_meeting." Status : ".$type[1]."<br>";
-					$array_busy_times[$incr_array_busy_times] = $timestart_meeting .'-'.$timeend_meeting;
-					$incr_array_busy_times++;
-				}
+				// =============== We put in an array all the busy meeting ================
+				echo "Day : ".$day_meeting." Time : ".$timestart_meeting." - ".$timeend_meeting." Status : ".$type[1]."<br>";
+				$array_busy_times[$incr_array_busy_times] = $timestart_meeting .'-'.$timeend_meeting;
+				$incr_array_busy_times++;
 			}
-			
-			/*foreach($array_busy_times as $x => $x_value) {
-				 echo $x . ' - ' . $x_value.'<br>';
-			}*/
-			
 		}
+			
+		/*foreach($array_busy_times as $x => $x_value) {
+				echo $x . ' - ' . $x_value.'<br>';
+		}*/
+			
+	}
 ?>
 <!DOCTYPE html>
 <html>
