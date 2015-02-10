@@ -111,7 +111,7 @@
 									
 							}	
 
-				 document.getElementById('display-meeting').innerHTML = "You choose a meeting on " + choice_date + " at " + select_time_start.value 
+				 document.getElementById('display-meeting').innerHTML = "You choose a meeting with the " + service + " on " + choice_date + " at " + select_time_start.value 
 				 + " until " + select_time_end.value;				
 			}
 </script>
@@ -127,142 +127,95 @@
 					  <div class="mask"></div>
 				</div>
 				<h2>Appointment Application</h2>
-
-					<article class="tabs">
 						<div class="part_align">
-						<form action="" method="post" name="form" id="id_form" onchange="getdata();">
-							<section id="tab1">
-									<p>
-										<h2><a href="#tab1">Make an appointment</a></h2>
-										<label for="service">Select service</label>
-										<select name="service" id="service">
-										  <option value="Health Centre">Health Centre </option>
-										  <option value="Careers Office">Careers </option>
-										  <option value="Chaplaincy">Chaplaincy </option>
-										  <option value="Counsellor Student Services">Counsellor </option>
-										  <option value="Access Student Services">Access </option>
-									 	  <option value="Students Union">Students Union </option>
-									 	  <option value="Sports Office">Sports </option>
-									 	  <option value="Dyslexia Student Services">Dyslexia </option>
-									 	  <option value="Orientation">Orientation </option>
-									 	  <option value="Charities Commitee">Charities Commitee </option>
-										</select>  
-										<br>
-											<label for="date">Date</label>		
-										<select id='date'>
-											<?php 
-												date_default_timezone_set('Europe/Dublin');
-												 $date = date('Y-m-d');
-												// $date_in_2_weeks =  date('l jS \of F Y ',strtotime('+2 weeks'));
-												$day=1;
-												 while($day <= 12 ){
-												 	$date=date('Y-m-d',strtotime('+'.$day .' days'));
-												 	$day_letters = date('D',strtotime($date));	
-												 //	$date=date('l jS \of F Y ',strtotime('+'.$day .' days'));
-												 	if($day_letters != 'Sat' && $day_letters != 'Sun'){
-												 		 //$date = date_format($date,'l jS \of F Y ');
-												 		echo'<option value="'. $date . '">' . $date .'</option>';
-												 	}
-													$day++;
-												 }
-												 
-											?>
-										</select>
-										
-										<br>	
-										<label for="start">Start</label>		
-										<select id="time_start">
-											<?php 
-											for($hour = 8; $hour < 17; $hour++){
-												$minutes =0;
-												$minutes = str_pad($minutes, 2, '0', STR_PAD_LEFT);
-												 while( $minutes < 60 ){
-												 	if($hour <=10){
-												 		$hour = str_pad($hour, 2, '0', STR_PAD_LEFT);
-												 	}
-												 	 echo'<option value="'. $hour .'.'.$minutes.'">' . $hour .'.' .$minutes . '</option>';
-												 	 $minutes+=15;
-												 	}
-												} 
-											?>
-										</select>
-										<br>	
-										<label for="End">End</label>	
-										<select id='time_end'>
-											<?php 
-											$minutes =15;
-											for($hour = 8; $hour <= 17; $hour++){
-												$minutes =0;
-												$minutes = str_pad($minutes, 2, '0', STR_PAD_LEFT);
-												if($hour == 17){
-														$minutes =0;
-														$minutes = str_pad($minutes, 2, '0', STR_PAD_LEFT);
-													 echo'<option value="'. $hour . '.'.$minutes.'">' . $hour .'.' .$minutes . '</option>';
-												}else {
-													while( $minutes < 60 ){
-															if($hour <=10){
-																$hour = str_pad($hour, 2, '0', STR_PAD_LEFT);
-															}
-														 echo'<option value="'. $hour . '.'.$minutes.'">' . $hour .'.' .$minutes . '</option>';
+							<form action="" method="post" name="form" id="id_form" onchange="getdata();">
+										<p>
+											<h3>Make an appointment</h3>
+											<label for="service">Select service</label>
+											<select name="service" id="service">
+											  <option value="Health Centre">Health Centre </option>
+											  <option value="Careers Office">Careers </option>
+											  <option value="Chaplaincy">Chaplaincy </option>
+											  <option value="Counsellor Student Services">Counsellor </option>
+											  <option value="Access Student Services">Access </option>
+											  <option value="Students Union">Students Union </option>
+											  <option value="Sports Office">Sports </option>
+											  <option value="Dyslexia Student Services">Dyslexia </option>
+											  <option value="Orientation">Orientation </option>
+											  <option value="Charities Commitee">Charities Commitee </option>
+											</select>  
+											<br>
+												<label for="date">Date</label>		
+											<select id='date'>
+												<?php 
+													date_default_timezone_set('Europe/Dublin');
+													 $date = date('Y-m-d');
+													// $date_in_2_weeks =  date('l jS \of F Y ',strtotime('+2 weeks'));
+													$day=1;
+													 while($day <= 12 ){
+														$date=date('Y-m-d',strtotime('+'.$day .' days'));
+														$day_letters = date('D',strtotime($date));	
+													 //	$date=date('l jS \of F Y ',strtotime('+'.$day .' days'));
+														if($day_letters != 'Sat' && $day_letters != 'Sun'){
+															 //$date = date_format($date,'l jS \of F Y ');
+															echo'<option value="'. $date . '">' . $date .'</option>';
+														}
+														$day++;
+													 }
+													 
+												?>
+											</select>
+											
+											<br>	
+											<label for="start">Start</label>		
+											<select id="time_start">
+												<?php 
+												for($hour = 8; $hour < 17; $hour++){
+													$minutes =0;
+													$minutes = str_pad($minutes, 2, '0', STR_PAD_LEFT);
+													 while( $minutes < 60 ){
+														if($hour <=10){
+															$hour = str_pad($hour, 2, '0', STR_PAD_LEFT);
+														}
+														 echo'<option value="'. $hour .'.'.$minutes.'">' . $hour .'.' .$minutes . '</option>';
 														 $minutes+=15;
-												 	}
+														}
+													} 
+												?>
+											</select>
+											<br>	
+											<label for="End">End</label>	
+											<select id='time_end'>
+												<?php 
+												$minutes =15;
+												for($hour = 8; $hour <= 17; $hour++){
+													$minutes =0;
+													$minutes = str_pad($minutes, 2, '0', STR_PAD_LEFT);
+													if($hour == 17){
+															$minutes =0;
+															$minutes = str_pad($minutes, 2, '0', STR_PAD_LEFT);
+														 echo'<option value="'. $hour . '.'.$minutes.'">' . $hour .'.' .$minutes . '</option>';
+													}else {
+														while( $minutes < 60 ){
+																if($hour <=10){
+																	$hour = str_pad($hour, 2, '0', STR_PAD_LEFT);
+																}
+															 echo'<option value="'. $hour . '.'.$minutes.'">' . $hour .'.' .$minutes . '</option>';
+															 $minutes+=15;
+														}
+													}
 												}
-											}
-											?>
-										</select>
-										<br>	
-										  <div id="display-meeting"></div
-									
-										<div class="btn-submit"> Submit </div>
-										<br>
-									</p>
-								
-							</section>
-						</form>
-					
-						<section id="tab2">
-							<h2><a href="#tab2">History appointments</a></h2>
-							<br>
-							<br>
-									<label for="filter">Filter</label>								
-									<select name="filter">
-									  <option value="waiting">waiting</option>
-									  <option value="done">done</option>
-									  <option value="achieved">achieved</option>
-									</select>  
-							<br>
-							<table class="tg">
-							  <tr>
-								<th class="tg-031e">Appointment</th>
-								<th class="tg-031e">Service</th>
-								<th class="tg-031e">State</th>
-								<th class="tg-031e">Date</th>
-							  </tr>
-							  <tr>
-								<td class="tg-031e"></td>
-								<td class="tg-031e"></td>
-								<td class="tg-031e"></td>
-								<td class="tg-031e"></td>
-							  </tr>
-							  <tr>
-								<td class="tg-031e"></td>
-								<td class="tg-031e"></td>
-								<td class="tg-031e"></td>
-								<td class="tg-031e"></td>
-							  </tr>
-							</table>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-						</section>
+												?>
+											</select>
+											<br>	
+											  <div id="display-meeting"></div>
+											<br>
+											<div class="btn-submit"> Submit </div>
+											<br>
+										</p>
+									</form>
 						</div>
-
-			</article>
-			</div>
+				</div>	
 			<!-- ============ Link to logout.php to disocnnect the user ================= -->
 			<b id="logout"><a href="logout.php" style="text-decoration: none;"><div class="btn-disconnect"> Disconnect</div></a></b>
 		</section>

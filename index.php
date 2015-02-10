@@ -3,7 +3,7 @@
 	include('script_sql_index.php'); 
 	/* =================  If a session is already openned : a user is connected to the application   ====================== */
 	if(isset($_SESSION['tnumber'])){
-		header("location: connected.php");
+		header("location: connectedM.php");
 	}
 ?>
 <!DOCTYPE html>
