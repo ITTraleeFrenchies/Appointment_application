@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 session_start();
 /* =================  We include the script in order to retrieve data  ====================== */
 	include('extract_busy_time.php'); 
@@ -7,6 +8,17 @@ session_start();
 	if(!isset($_SESSION['tnumber'])){
 		header("location: index.php"); // Redirecting To Other Page
 	}
+=======
+/* =================  We include the script in order to retrieve data  ====================== */
+	include('extract_busy_time.php'); 
+	include('getDataZimbra.php'); 
+<<<<<<< HEAD
+	if(!isset($_SESSION['tnumber'])){
+		header("location: index.php");
+	}
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
 ?>
 <!DOCTYPE html>
 <html>
@@ -213,17 +225,28 @@ session_start();
 												?>
 											</select>
 											<br>	
+<<<<<<< HEAD
 											 <div id="display-meeting"></div>
 											<br>
 											<div class="btn-submit"> Submit </div>
 											<br>
 											<b id="logout"><a href="logout.php" style="text-decoration: none;"><div class="btn-disconnect"> Disconnect</div></a></b>
+=======
+											  <div id="display-meeting"></div>
+											<br>
+											<div class="btn-submit"> Submit </div>
+											<br>
+>>>>>>> origin/master
 										</p>
 									</form>
 						</div>
 				</div>	
 			<!-- ============ Link to logout.php to disocnnect the user ================= -->
+<<<<<<< HEAD
 			
+=======
+			<b id="logout"><a href="logout.php" style="text-decoration: none;"><div class="btn-disconnect"> Disconnect</div></a></b>
+>>>>>>> origin/master
 		</section>
 		<div class="footer">
 			<p>2015 - Institute of Technology of Tralee </p>
