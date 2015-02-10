@@ -1,30 +1,13 @@
 <?php
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/master
 session_start();
 /* =================  We include the script in order to retrieve data  ====================== */
 	include('extract_busy_time.php'); 
 	include('getDataZimbra.php'); 
+	
 	// ======== if session is not started ========
 	if(!isset($_SESSION['tnumber'])){
 		header("location: index.php"); // Redirecting To Other Page
 	}
-<<<<<<< HEAD
-=======
-=======
-/* =================  We include the script in order to retrieve data  ====================== */
-	include('extract_busy_time.php'); 
-	include('getDataZimbra.php'); 
-<<<<<<< HEAD
-	if(!isset($_SESSION['tnumber'])){
-		header("location: index.php");
-	}
-=======
->>>>>>> origin/master
->>>>>>> origin/master
->>>>>>> origin/master
 ?>
 <!DOCTYPE html>
 <html>
@@ -151,7 +134,7 @@ session_start();
 				</div>
 				<h2>Appointment Application</h2>
 						<div class="part_align">
-							<form action="" method="post" name="form" id="id_form" onchange="getdata();">
+							<form action="" method="post" name="submit_appointment" id="id_form" onchange="getdata();">
 										<p>
 											<h3>Make an appointment</h3>
 											<label for="service">Select service</label>
@@ -231,38 +214,17 @@ session_start();
 												?>
 											</select>
 											<br>	
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/master
 											 <div id="display-meeting"></div>
 											<br>
-											<div class="btn-submit"> Submit </div>
+											<b id="submit"><a href="submit.php" style="text-decoration: none;"><div class="btn-submit"> Submit </div></a></b>
 											<br>
 											<b id="logout"><a href="logout.php" style="text-decoration: none;"><div class="btn-disconnect"> Disconnect</div></a></b>
-<<<<<<< HEAD
-=======
-=======
-											  <div id="display-meeting"></div>
 											<br>
-											<div class="btn-submit"> Submit </div>
 											<br>
->>>>>>> origin/master
->>>>>>> origin/master
 										</p>
 									</form>
 						</div>
 				</div>	
-			<!-- ============ Link to logout.php to disocnnect the user ================= -->
-<<<<<<< HEAD
-			
-=======
-<<<<<<< HEAD
-			
-=======
-			<b id="logout"><a href="logout.php" style="text-decoration: none;"><div class="btn-disconnect"> Disconnect</div></a></b>
->>>>>>> origin/master
->>>>>>> origin/master
 		</section>
 		<div class="footer">
 			<p>2015 - Institute of Technology of Tralee </p>
