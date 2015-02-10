@@ -1,10 +1,13 @@
 <?php
-/* =================  We include the script in order to check the connection  ====================== */
+	session_start();
+	/* =================  We include the script in order to check the connection  ====================== */
 	include('script_sql_index.php'); 
-	/* =================  If a session is already openned : a user is connected to the application   ====================== */
+	/* =================  If a session is not openned   ====================== */
 	if(isset($_SESSION['tnumber'])){
-		header("location: connected.php");
+		header("location: connectedM.php");
 	}
+	
+	
 ?>
 <!DOCTYPE html>
 <html>

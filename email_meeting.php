@@ -1,10 +1,11 @@
 <?php
 /* =================  Redirect the page email.php to index.php after 3 seconds   ====================== */	
-header( "refresh:3;url=index.php" );
-include "connected.php";
+//header( "refresh:3;url=index.php" );
+//include "connectedM.php";
 
 /* =================  We retrieve the data  ====================== */	
-	$tnumber = $_SESSION['insert'];
+session_start();
+	$tnumber = $_SESSION['tnumber'];
 	$email = $tnumber . "@z3students.ittralee.ie";
 	$pin =  substr($tnumber, -5); 
   	
@@ -53,5 +54,5 @@ echo '<!DOCTYPE html>
 </html>
 ';
 /* =================  We don't need a connected session anymore ====================== */
-session_destroy();
+//session_destroy();
 ?>	

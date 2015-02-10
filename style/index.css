@@ -7,7 +7,7 @@ form {
 		-webkit-border-radius: 10px;
 		-moz-border-radius: 10px;
 		color : #A0A0A0;
-		padding-bottom:3%;
+		padding-bottom:2%;
 	
 }
 
@@ -60,4 +60,9 @@ float: left;
 width: 10em;
 margin-right: 1em;
 text-align: right;
+}
+
+/* ================ CSS FOR MOBILE ===========================*/
+@media only screen and (max-device-width: 480px) {
+
 }
