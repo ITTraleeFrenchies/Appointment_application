@@ -2,9 +2,12 @@
 /* =================  We include the script in order to retrieve data  ====================== */
 	include('extract_busy_time.php'); 
 	include('getDataZimbra.php'); 
+<<<<<<< HEAD
 	if(!isset($_SESSION['tnumber'])){
 		header("location: index.php");
 	}
+=======
+>>>>>>> origin/master
 ?>
 <!DOCTYPE html>
 <html>
