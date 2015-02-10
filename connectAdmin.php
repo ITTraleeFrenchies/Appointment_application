@@ -1,10 +1,9 @@
 <?php  
-	session_start();
 	/* ===========  Variable To Store Error Message ==================*/
 	$error=''; 
 	if (isset($_POST['submit_login'])) {
 		if (empty($_POST['username']) || empty($_POST['password'])) {
-			$error = "invalid user name or password";
+			$error = "invalid username or password";
 		}
 	else{
 		//================= Get data from the form =================
@@ -33,7 +32,7 @@
 				$_SESSION['username']= $value_user;  // Initializing Session with value of PHP Variable
 				//header("location: connected.php"); // Redirecting To Other Page
 			} else {
-				$error = "Invalid user name or password";
+				$error = "Error";
 			}
 		mysqli_close($link); // Closing Connection
 		}

@@ -61,7 +61,10 @@ width: 10em;
 margin-right: 1em;
 text-align: right;
 }
+h3 {
+padding-top:2%;
 
+}
 /* ================ CSS FOR MOBILE ===========================*/
 @media only screen and (max-device-width: 480px) {
 
