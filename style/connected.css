@@ -1,14 +1,54 @@
 /* ================= CSS for connected.css ===============*/
+<<<<<<< HEAD
 
 form {
 		box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7); 
 		background: #222; 
+=======
+<<<<<<< HEAD
+
+form {
+		box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7); 
+		background: #222; 
+=======
+body{
+
+}
+form {
+		box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7); 
+<<<<<<< HEAD
+		background: #222; 
+=======
+<<<<<<< HEAD
+		background: #222; 
+=======
+	 background: #222; 
+>>>>>>> origin/master
+>>>>>>> origin/master
+>>>>>>> origin/master
+>>>>>>> origin/master
 		-webkit-box-shadow: 0px 2px 3px #555;
 		-moz-box-shadow: 0px 2px 3px #555;
 		-webkit-border-radius: 10px;
 		-moz-border-radius: 10px;
 		color : #A0A0A0;
+<<<<<<< HEAD
 		padding-bottom:5%;
+=======
+<<<<<<< HEAD
+		padding-bottom:5%;
+=======
+<<<<<<< HEAD
+		padding-bottom:5%;
+=======
+<<<<<<< HEAD
+		padding-bottom:5%;
+=======
+		padding-bottom:3%;
+>>>>>>> origin/master
+>>>>>>> origin/master
+>>>>>>> origin/master
+>>>>>>> origin/master
 	
 }
 /* ================= For all the select ===============*/
@@ -53,6 +93,13 @@ select {
   background: #2171a3;
   text-decoration: none;
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
+>>>>>>> origin/master
 .part_align label {
 float: left;
 width: 10em;

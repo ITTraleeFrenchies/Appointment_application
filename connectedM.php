@@ -1,9 +1,21 @@
 <?php
 session_start();
 /* =================  We include the script in order to retrieve data  ====================== */
+<<<<<<< HEAD
 	include('submit.php');
 	include('extract_busy_time.php'); 
 	include('getDataZimbra.php');  
+=======
+<<<<<<< HEAD
+	include('submit.php');
+	include('extract_busy_time.php'); 
+	include('getDataZimbra.php');  
+=======
+	include('extract_busy_time.php'); 
+	include('getDataZimbra.php'); 
+	
+>>>>>>> origin/master
+>>>>>>> origin/master
 	// ======== if session is not started ========
 	if(!isset($_SESSION['tnumber'])){
 		header("location: index.php"); // Redirecting To Other Page
@@ -120,6 +132,10 @@ session_start();
 				 document.getElementById('display-meeting').innerHTML = "You choose a meeting with the " + service + " on " + choice_date + " at " + select_time_start.value 
 				 + " until " + select_time_end.value;				
 			}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/master
 			
 			function enable(){
 				document.getElementById("date").disabled= false;
@@ -127,6 +143,11 @@ session_start();
 				document.getElementById("time_end").disabled=false;
 				document.getElementById("submit").disabled=false;
 			}
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
 </script>
 	</head>
 	<body>
@@ -141,6 +162,10 @@ session_start();
 				</div>
 				<h2>Appointment Application</h2>
 						<div class="part_align">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/master
 							<form action="" method="post" name="form" id="id_form" onchange="getdata();">
 										<p>
 											<h3>Make an appointment</h3>
@@ -221,7 +246,11 @@ session_start();
 														?>
 													</select>
 													<br>	
+<<<<<<< HEAD
 													 <div id="display-meeting" name="message-meeting"></div>
+=======
+													 <div id="display-meeting"></div>
+>>>>>>> origin/master
 													<br>
 													<input id="submit" type="submit" value="Submit"name="submit_appointment" class="btn-submit" disabled>
 													<br>
@@ -230,12 +259,112 @@ session_start();
 													<br>
 													<div class="see-history"><a href="history.php" style=" float:right; color:white;">See history</a></div>
 												
+<<<<<<< HEAD
+=======
+=======
+							<form action="" method="post" name="submit_appointment" id="id_form" onchange="getdata();">
+										<p>
+											<h3>Make an appointment</h3>
+											<label for="service">Select service</label>
+											<select name="service" id="service">
+											  <option value="Health Centre">Health Centre </option>
+											  <option value="Careers Office">Careers </option>
+											  <option value="Chaplaincy">Chaplaincy </option>
+											  <option value="Counsellor Student Services">Counsellor </option>
+											  <option value="Access Student Services">Access </option>
+											  <option value="Students Union">Students Union </option>
+											  <option value="Sports Office">Sports </option>
+											  <option value="Dyslexia Student Services">Dyslexia </option>
+											  <option value="Orientation">Orientation </option>
+											  <option value="Charities Commitee">Charities Commitee </option>
+											</select>  
+											<br>
+												<label for="date">Date</label>		
+											<select id='date'>
+												<?php 
+													date_default_timezone_set('Europe/Dublin');
+													 $date = date('Y-m-d');
+													// $date_in_2_weeks =  date('l jS \of F Y ',strtotime('+2 weeks'));
+													$day=1;
+													 while($day <= 12 ){
+														$date=date('Y-m-d',strtotime('+'.$day .' days'));
+														$day_letters = date('D',strtotime($date));	
+													 //	$date=date('l jS \of F Y ',strtotime('+'.$day .' days'));
+														if($day_letters != 'Sat' && $day_letters != 'Sun'){
+															 //$date = date_format($date,'l jS \of F Y ');
+															echo'<option value="'. $date . '">' . $date .'</option>';
+														}
+														$day++;
+													 }
+													 
+												?>
+											</select>
+											
+											<br>	
+											<label for="start">Start</label>		
+											<select id="time_start">
+												<?php 
+												for($hour = 8; $hour < 17; $hour++){
+													$minutes =0;
+													$minutes = str_pad($minutes, 2, '0', STR_PAD_LEFT);
+													 while( $minutes < 60 ){
+														if($hour <=10){
+															$hour = str_pad($hour, 2, '0', STR_PAD_LEFT);
+														}
+														 echo'<option value="'. $hour .'.'.$minutes.'">' . $hour .'.' .$minutes . '</option>';
+														 $minutes+=15;
+														}
+													} 
+												?>
+											</select>
+											<br>	
+											<label for="End">End</label>	
+											<select id='time_end'>
+												<?php 
+												$minutes =15;
+												for($hour = 8; $hour <= 17; $hour++){
+													$minutes =0;
+													$minutes = str_pad($minutes, 2, '0', STR_PAD_LEFT);
+													if($hour == 17){
+															$minutes =0;
+															$minutes = str_pad($minutes, 2, '0', STR_PAD_LEFT);
+														 echo'<option value="'. $hour . '.'.$minutes.'">' . $hour .'.' .$minutes . '</option>';
+													}else {
+														while( $minutes < 60 ){
+																if($hour <=10){
+																	$hour = str_pad($hour, 2, '0', STR_PAD_LEFT);
+																}
+															 echo'<option value="'. $hour . '.'.$minutes.'">' . $hour .'.' .$minutes . '</option>';
+															 $minutes+=15;
+														}
+													}
+												}
+												?>
+											</select>
+											<br>	
+											 <div id="display-meeting"></div>
+											<br>
+											<b id="submit"><a href="submit.php" style="text-decoration: none;"><div class="btn-submit"> Submit </div></a></b>
+											<br>
+											<b id="logout"><a href="logout.php" style="text-decoration: none;"><div class="btn-disconnect"> Disconnect</div></a></b>
+											<br>
+											<br>
+>>>>>>> origin/master
+>>>>>>> origin/master
 										</p>
 									</form>
 						</div>
 				</div>	
+<<<<<<< HEAD
 			<!-- ============ Link to logout.php to disocnnect the user ================= -->
 			
+=======
+<<<<<<< HEAD
+			<!-- ============ Link to logout.php to disocnnect the user ================= -->
+			
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
 		</section>
 		<div class="footer">
 			<p>2015 - Institute of Technology of Tralee </p>
