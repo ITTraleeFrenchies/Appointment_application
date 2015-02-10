@@ -1,13 +1,10 @@
 <?php
-	session_start();
-	/* =================  We include the script in order to check the connection  ====================== */
+/* =================  We include the script in order to check the connection  ====================== */
 	include('script_sql_index.php'); 
-	/* =================  If a session is not openned   ====================== */
+	/* =================  If a session is already openned : a user is connected to the application   ====================== */
 	if(isset($_SESSION['tnumber'])){
-		header("location: connectedM.php");
+		header("location: connected.php");
 	}
-	
-	
 ?>
 <!DOCTYPE html>
 <html>
@@ -45,6 +42,7 @@
 								<br>
 							</div>
 					</form>
+					<?php echo $error; ?>
 					<!-- ============ Display an error if the connection did not work ================= -->
 					<span><?php echo $error; ?></span>
 					
