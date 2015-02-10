@@ -1,10 +1,11 @@
 <?php
 /* =================  Redirect the page email.php to index.php after 3 seconds   ====================== */	
-header( "refresh:3;url=index.php" );
-include "connected.php";
+//header( "refresh:3;url=index.php" );
+//include "connectedM.php";
 
 /* =================  We retrieve the data  ====================== */	
-	$tnumber = $_SESSION['insert'];
+session_start();
+	$tnumber = $_SESSION['tnumber'];
 	$email = $tnumber . "@z3students.ittralee.ie";
 	$pin =  substr($tnumber, -5); 
   	
@@ -41,7 +42,7 @@ echo '<!DOCTYPE html>
 
 				<h2>Appointment Application</h2>
 					<div class="message">	  
-							<p>An email has been sent to your Zimbra address email: ' . $email . ' in order to sum up you the time of your meeting</p>
+							<p>An email has been sent to your Zimbra address email: ' . $email . ' in order to sum up you your meeting.</p>
 					</div>
 				
 			</div>
@@ -53,5 +54,5 @@ echo '<!DOCTYPE html>
 </html>
 ';
 /* =================  We don't need a connected session anymore ====================== */
-session_destroy();
+//session_destroy();
 ?>	
