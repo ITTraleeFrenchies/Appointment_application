@@ -17,7 +17,7 @@ var dateObject = $(this).datepicker('getDate');
 		  /* ============ check if fields are empty================= */
 		if (empty($_POST['tnumber']) || empty($_POST['firstname']) || empty($_POST['lastname'])
 			|| empty($_POST['datebirth']) || empty($_POST['city']) || empty($_POST['selectCounty']) || empty($_POST['courses'])
-			|| empty($_POST['disability']) || empty($_POST['disabilityS'] )) {
+			|| empty($_POST['disability'])) {
 			$error = "Please complete all the mandatory field";
 		}
 		else{
@@ -32,10 +32,11 @@ var dateObject = $(this).datepicker('getDate');
 	    $county = $_POST["selectCounty"];
 	    $course = $_POST["courses"];
 	    $disability = $_POST["disability"];
-	    $name = $_POST['disabilityS'];
+	    $disabilitySeveral = $_POST['disabilityS'];
 	    $comment =""; 
 	    $contact = $_POST['contact'];
-
+		$all_check = "{0}";
+		
 		    if( !empty($_POST['comment'])){
 		    	$comment = $_POST['comment'];
 		    }
@@ -50,10 +51,9 @@ var dateObject = $(this).datepicker('getDate');
 					$error = "This account already exists";
 			}
 			else {
-
 			 /* ============ We insert the several disabilities as number into the database ================= */
 			$all_check ="{";
-				foreach ($name as $disabilityS){
+				foreach ($disabilitySeveral as $disabilityS){
 					$all_check= $all_check . $disabilityS . ",";
 				}
 			$all_check = substr($all_check,0, -1); 
