@@ -36,7 +36,6 @@
 								<input type="text" name="username" placeholder="username" maxlength="30">
 								<br>
 								<br>
-<<<<<<< HEAD
 								<label for="pin">Password</label>
 							    <input type="password" name="password" placeholder="*****" maxlength="30"/>
 								<br>
@@ -45,21 +44,10 @@
 									<span><?php echo $error; ?></span>
 								<br>
 								<br>	
-=======
-								<label for="pin">Pin</label>
-							    <input type="password" name="password" placeholder="*****" maxlength="30"/>
-								<br>
-								<br>
->>>>>>> origin/master
 								<input name="submit_login" class="btn-login" value="login" type="submit">
 								<br>
 							</div>
 					</form>
-<<<<<<< HEAD
-=======
-					<!-- ============ Display an error if the connection did not work ================= -->
-					<span><?php echo $error; ?></span>
->>>>>>> origin/master
 					
 			</div>
 		</section>

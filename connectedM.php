@@ -144,7 +144,7 @@ session_start();
 										<p>
 											<h3>Make an appointment</h3>
 													<label for="service">Select service</label>
-													<select name="service" id="service" onclick="enable()">
+													<select name="service" id="service" onchange="enable()">
 													  <option value="Health Centre">Health Centre </option>
 													  <option value="Careers Office">Careers </option>
 													  <option value="Chaplaincy">Chaplaincy </option>
@@ -228,8 +228,7 @@ session_start();
 													<a href="logout.php" style="text-decoration: none;"><input class="btn-disconnect" value="Disconnect" type="button" ></a>
 													<br>
 													<div class="see-history"><a href="history.php" style=" float:right; color:white;">See history</a></div>
-													<br>
-													<br>
+													
 										</p>
 									</form>
 						</div>

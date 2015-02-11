@@ -31,7 +31,37 @@ session_start();
 				<h2>Appointment Application</h2>
 				<form action="" method="" name="">
 						<div class="part_align">
-						<h2>Global Statistics</h2>
+						<h3>Global Statistics</h3>
+						 <table class="tg">
+													  <tr>
+														<th class="tg-031e">Name</th>
+														<th class="tg-031e">8</th>
+														<th class="tg-031e">9</th>
+														<th class="tg-031e">10</th>
+														<th class="tg-031e">11</th>
+														<th class="tg-031e">12</th>
+														<th class="tg-031e">13</th>
+														<th class="tg-031e">14</th>
+														<th class="tg-031e">15</th>
+														<th class="tg-031e">16</th>
+														<th class="tg-031e">17</th>
+														<th class="tg-031e">18</th>
+													  </tr>
+													  <tr>
+														<td class="tg-031e"></td>
+														<td class="tg-031e"></td>
+														<td class="tg-031e"></td>
+														<td class="tg-031e"></td>
+														<td class="tg-031e"></td>
+														<td class="tg-031e"></td>
+														<td class="tg-031e"></td>
+														<td class="tg-031e"></td>
+														<td class="tg-031e"></td>
+														<td class="tg-031e"></td>
+														<td class="tg-031e"></td>
+														<td class="tg-031e"></td>
+													  </tr>
+							</table>	
 						</div>
 				</form>	
 			</div>		

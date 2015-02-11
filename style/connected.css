@@ -28,12 +28,6 @@ select {
 .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
 /* ================= Tabs button sbmit and disconnect ===============*/
 .btn-submit, .btn-disconnect , .btn-history{
- /* padding: 10px 10px 10px 10px;
-  -webkit-border-radius: 18;
-  -moz-border-radius: 18;
-  border-radius: 18px;
-  color: #ffffff;
-  font-size: 15px;*/
   margin : auto; 
 	width:50%;
   	 background: #686868 ;
@@ -66,6 +60,6 @@ padding-right:10px;
 .see-history{
 padding-right:2%;
 }
-h3{
-padding-top:1%;
+#display-meeting{
+color:white;
 }

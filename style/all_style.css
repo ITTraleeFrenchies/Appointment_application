@@ -8,7 +8,7 @@ body {
 }
 
 p {
-	font: 15px Tahoma, Helvetica, Arial, Sans-Serif;
+	font: 14px Tahoma, Helvetica, Arial, Sans-Serif;
 
 }img {
 float:left;
@@ -42,6 +42,15 @@ text-align: center;
 		-moz-border-radius: 10px;
 		  color: #ffffff;
 font: 18px Tahoma, Helvetica, Arial, Sans-Serif;
+
+}
+
+h3 {
+color:white;
+  font-weight: bold;
+text-align: center;
+padding-top:2%;
+font: 16px Tahoma, Helvetica, Arial, Sans-Serif;
 
 }
 /* ================= the separator ===============*/
