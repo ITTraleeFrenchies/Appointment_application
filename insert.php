@@ -52,12 +52,16 @@ var dateObject = $(this).datepicker('getDate');
 			}
 			else {
 			 /* ============ We insert the several disabilities as number into the database ================= */
-			$all_check ="{";
+			if(!empty($disabilityS)){
+				$all_check ="{";
 				foreach ($disabilitySeveral as $disabilityS){
 					$all_check= $all_check . $disabilityS . ",";
 				}
-			$all_check = substr($all_check,0, -1); 
-			$all_check = $all_check . "}";
+				$all_check = substr($all_check,0, -1); 
+				$all_check = $all_check . "}";
+			}
+			
+			
 			$_SESSION['insert'] = $tnumber;
 
 			 /* ============ We execute the insert and redirect to email.php================= */
