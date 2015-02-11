@@ -52,12 +52,29 @@ session_start();
 							<form action="" method="post" name="form" id="id_form" >
 										<p>
 											<h3>History of your appointments</h3>
+<<<<<<< HEAD
 												  <div id="meetings">
 												  
 												  </div>
 												  
 												  <div id="text">
 												  </div>
+=======
+												  <table class="tg">
+													  <tr>
+														<th class="tg-031e">Service</th>
+														<th class="tg-031e">Date request</th>
+														<th class="tg-031e">Date appointment</th>
+														<th class="tg-031e">State</th>
+													  </tr>
+													  <tr>
+														<td class="tg-031e"></td>
+														<td class="tg-031e"></td>
+														<td class="tg-031e"></td>
+														<td class="tg-031e"></td>
+													  </tr>
+												</table>
+>>>>>>> origin/master
 											<div class="back-make"><a href="connectedM.php" style=" float:right; color:white;">Back to make an appointment</a></div>	
 										</p>
 							</form>
