@@ -9,6 +9,8 @@ body {
 
 p {
 	font: 14px Tahoma, Helvetica, Arial, Sans-Serif;
+=======
+	font: 13px Tahoma, Helvetica, Arial, Sans-Serif;
 
 }img {
 float:left;
@@ -51,6 +53,9 @@ color:white;
 text-align: center;
 padding-top:2%;
 font: 16px Tahoma, Helvetica, Arial, Sans-Serif;
+text-align: center;
+padding-top:2%;
+font: 14px Tahoma, Helvetica, Arial, Sans-Serif;
 
 }
 /* ================= the separator ===============*/
