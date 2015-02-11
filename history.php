@@ -144,34 +144,14 @@ session_start();
 							<form action="" method="post" name="form" id="id_form" onchange="getdata();">
 										<p>
 											<h3>History of your appointments</h3>
-												<label for="service">Select service</label>
-												<select name="service">
-												  <option value="default">default</option>
-												</select>  
 												  <table class="tg">
 													  <tr>
-														<th class="tg-031e">Name</th>
-														<th class="tg-031e">8</th>
-														<th class="tg-031e">9</th>
-														<th class="tg-031e">10</th>
-														<th class="tg-031e">11</th>
-														<th class="tg-031e">12</th>
-														<th class="tg-031e">13</th>
-														<th class="tg-031e">14</th>
-														<th class="tg-031e">15</th>
-														<th class="tg-031e">16</th>
-														<th class="tg-031e">17</th>
-														<th class="tg-031e">18</th>
+														<th class="tg-031e">Service</th>
+														<th class="tg-031e">Date request</th>
+														<th class="tg-031e">Date appointment</th>
+														<th class="tg-031e">State</th>
 													  </tr>
 													  <tr>
-														<td class="tg-031e"></td>
-														<td class="tg-031e"></td>
-														<td class="tg-031e"></td>
-														<td class="tg-031e"></td>
-														<td class="tg-031e"></td>
-														<td class="tg-031e"></td>
-														<td class="tg-031e"></td>
-														<td class="tg-031e"></td>
 														<td class="tg-031e"></td>
 														<td class="tg-031e"></td>
 														<td class="tg-031e"></td>
