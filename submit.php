@@ -16,22 +16,17 @@
 		$insert = "insert into appointment values(null,'".$tnumber."','".$service."',null,'".$dateAppointment."','Waiting')";
 		$query = mysqli_query($link,$insert);
 		
-		//var_dump($query);
 		
 		if ($query) {
 				header("location: email_meeting.php");
 			}
-		else {
-			echo $insert;
+		/*else {
 			session_start();
-			if(session_destroy()) // Destroying All Sessions
-			{
-				header("location: index.php");
-			}
-			else {
-						$error = "Please complete correctly all the mandatory field";
+				if(session_destroy()) // Destroying All Sessions
+				{
+					//header("location: index.php");
 				}
-			}
+			}*/
 	}		
 	
 ?>

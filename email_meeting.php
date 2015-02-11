@@ -1,7 +1,7 @@
 <?php
 /* =================  Redirect the page email.php to index.php after 3 seconds   ====================== */	
-//header( "refresh:3;url=index.php" );
-//include "connectedM.php";
+header( "refresh:3;url=index.php" );
+include "submit.php";
 
 /* =================  We retrieve the data  ====================== */	
 session_start();

@@ -1,3 +1,4 @@
+
 /* ================= CSS for index.css ===============*/
 form {
 		box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7); 
@@ -63,9 +64,5 @@ text-align: right;
 }
 h3 {
 padding-top:2%;
-
-}
-/* ================ CSS FOR MOBILE ===========================*/
-@media only screen and (max-device-width: 480px) {
 
 }
