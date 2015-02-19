@@ -1,0 +1,12 @@
+BEGIN:VCALENDAR
+PRODID:Zimbra-Calendar-Provider
+VERSION:2.0
+METHOD:PUBLISH
+BEGIN:VFREEBUSY
+ORGANIZER:mailto:access@z3staff.ittralee.ie
+DTSTAMP:20150219T170051Z
+DTSTART:20150219T170051Z
+DTEND:20150422T170051Z
+URL:https://staffmail.staff.ittralee.ie/service/home/access/calendar?fmt=ifb&start=0d&end=+2week
+END:VFREEBUSY
+END:VCALENDAR
