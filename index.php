@@ -1,10 +1,13 @@
 <?php
-/* =================  We include the script in order to check the connection  ====================== */
+	session_start();
+	/* =================  We include the script in order to check the connection  ====================== */
 	include('script_sql_index.php'); 
-	/* =================  If a session is already openned : a user is connected to the application   ====================== */
+	/* =================  If a session is not openned   ====================== */
 	if(isset($_SESSION['tnumber'])){
-		header("location: connected.php");
+		header("location: connectedM.php");
 	}
+	
+	
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,14 +40,15 @@
 							    <input type="password" name="pin" placeholder="*****" maxlength="5"/>
 								<br>
 								<br>
+									<!-- ============ Display an error if the connection did not work ================= -->
+									<span><?php echo $error; ?></span>
+								<br>
+								<br>	
 								<input name="submit_login" class="btn-login" value="login" type="submit">
 								<input name="submit_subscribe" class="btn-subscribe" value="subscribe" type="submit">
 								<br>
 							</div>
 					</form>
-					<?php echo $error; ?>
-					<!-- ============ Display an error if the connection did not work ================= -->
-					<span><?php echo $error; ?></span>
 					
 			</div>
 		</section>

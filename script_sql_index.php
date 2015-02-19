@@ -1,13 +1,13 @@
 <?php  
-
-	session_start();
 	/* ===========  Variable To Store Error Message ==================*/
 	$error=''; 
 	if (isset($_POST['submit_login'])) {
+		$error = "yo";
 		if (empty($_POST['tnumber']) || empty($_POST['pin'])) {
 			$error = "tnumber or pin is invalid";
 		}
-	else{
+		else{
+		
 		//================= Get data from the form =================
 		$value_tnumber = $_POST["tnumber"];
 		$value_pin = $_POST["pin"];
@@ -29,10 +29,16 @@
 		$sql="select * from user where tnumber='$value_tnumber' AND pin='$value_pin'";
 		
 		$query = mysqli_query($link,$sql);
-		/* ===========   if the suer exists in the database, we redirect the user to connected.php==================*/
+		/* ===========   if the user exists in the database, we redirect the user to connected.php==================*/
 			if (mysqli_num_rows($query) == 1) {
+				date_default_timezone_set('Europe/Dublin');
+				$date = date('Y-m-d h:i:s a', time());
+				$sql_insert_connect = "insert into connection values(null,'$value_tnumber','$date',null)";
+				$query_insert_connect = mysqli_query($link,$sql_insert_connect);
+				
 				$_SESSION['tnumber']= $value_tnumber;  // Initializing Session with value of PHP Variable
-				header("location: connected.php"); // Redirecting To Other Page
+				header("location: connectedM.php"); // Redirecting To Other Page
+				exit();
 			} else {
 				$error = "T-number or pin are invalid";
 			}
@@ -41,5 +47,6 @@
 	}
 	else if(isset($_POST['submit_subscribe'])){
 		header("location: subscribe.php"); // Redirecting To Other Page
+		exit();
 	}
 ?>	
