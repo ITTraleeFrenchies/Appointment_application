@@ -100,6 +100,7 @@
 					tout += array_busy_times_js[l];
 				}				
 				alert("coucou" + tout);*/
+			
 				
 			}
 		</script>
@@ -147,14 +148,11 @@
 											<?php 
 												date_default_timezone_set('Europe/Dublin');
 												 $date = date('Y-m-d');
-												// $date_in_2_weeks =  date('l jS \of F Y ',strtotime('+2 weeks'));
 												$day=1;
 												 while($day <= 12 ){
 												 	$date=date('Y-m-d',strtotime('+'.$day .' days'));
 												 	$day_letters = date('D',strtotime($date));	
-												 //	$date=date('l jS \of F Y ',strtotime('+'.$day .' days'));
 												 	if($day_letters != 'Sat' && $day_letters != 'Sun'){
-												 		 //$date = date_format($date,'l jS \of F Y ');
 												 		echo'<option value="'. $date . '">' . $date .'</option>';
 												 	}
 													$day++;
