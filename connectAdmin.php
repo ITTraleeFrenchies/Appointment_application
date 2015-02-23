@@ -32,7 +32,7 @@
 				$_SESSION['username']= $value_user;  // Initializing Session with value of PHP Variable
 				//header("location: connected.php"); // Redirecting To Other Page
 			} else {
-				$error = "Error";
+				$error = "Wrong administrator name or password";
 			}
 		mysqli_close($link); // Closing Connection
 		}
