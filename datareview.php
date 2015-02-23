@@ -4,65 +4,6 @@ session_start();
 	if(!isset($_SESSION['username'])){
 		header("location: indexAdmin.php"); // Redirecting To Other Page
 	}
-?>
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Student Application : Appointment</title>
-		<!-- ============ Viewport basics for mobile devices ================= -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link rel="stylesheet" href="style/all_style.css" type="text/css">
-		<link rel="stylesheet" href="style/connected.css" type="text/css">
-		<script src="http://www.datejs.com/build/date.js" type="text/javascript"></script>
-		
-	</head>
-	<body>
-		<section>
-			<div id="content">
-				<img src="images/rsz_ittralee_icone.png" alt="ITtralee" width="100" height="100" >
-				<h1>Institute of Technology of Tralee</h1>
-				
-				<!-- ============ Separator ================= -->
-				<div class="or-spacer">
-					  <div class="mask"></div>
-				</div>
-				<h2>Appointment Application</h2>
-				<form action="" method="" name="">
-						<div class="part_align">
-						<h3>Global Statistics</h3>
-						 <table class="tg">
-													  <tr>
-														<th class="tg-031e">Name</th>
-														<th class="tg-031e">8</th>
-														<th class="tg-031e">9</th>
-														<th class="tg-031e">10</th>
-														<th class="tg-031e">11</th>
-														<th class="tg-031e">12</th>
-														<th class="tg-031e">13</th>
-														<th class="tg-031e">14</th>
-														<th class="tg-031e">15</th>
-														<th class="tg-031e">16</th>
-														<th class="tg-031e">17</th>
-														<th class="tg-031e">18</th>
-													  </tr>
-													  <tr>
-														<td class="tg-031e"></td>
-														<td class="tg-031e"></td>
-														<td class="tg-031e"></td>
-														<td class="tg-031e"></td>
-														<td class="tg-031e"></td>
-														<td class="tg-031e"></td>
-														<td class="tg-031e"></td>
-														<td class="tg-031e"></td>
-														<td class="tg-031e"></td>
-														<td class="tg-031e"></td>
-														<td class="tg-031e"></td>
-														<td class="tg-031e"></td>
-													  </tr>
-							</table>	
-						</div>
-						<br>
-						<?php 
 						
 						$servername = "localhost";
 						$username = "root";
@@ -70,30 +11,17 @@ session_start();
 						$dbname = "appointment_db";
 						
 						$link = mysqli_connect($servername, $username, $password, $dbname);
-										
-						echo "GLOBAL VIEWS </br></br>";
-						/*================= VIEW STATE =========================*/
-						echo "State View : </br>";
-						
-						$select = "select * from view_state";
-						$result = mysqli_query($link,$select);
-						
-						while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
-							//print_r($row);
-							var_dump($row);
-							echo "</br>";
-						}										
-						
 						/*=========================== GENERAL VIEW ===============*/
-						echo "General View </br>";
 						
-						$select = "select * from view_general";
-						$result = mysqli_query($link,$select);
+						$select_total = "select * from view_general";
+						$result_view_general = mysqli_query($link,$select_total);
+
 						
-						while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
-							var_dump($row);
-							echo "</br>";
-						}
+						$select_app = "select * from view_state";
+						$result_view_app = mysqli_query($link,$select_app);
+															
+						
+						
 						
 						
 						/*================== TIME VIEW =============================*/
@@ -125,8 +53,101 @@ session_start();
 							var_dump($row);
 							echo "</br>";
 						}
+								
+
+
+
+
+?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Student Application : Appointment</title>
+		<!-- ============ Viewport basics for mobile devices ================= -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="style/all_style.css" type="text/css">
+		<link rel="stylesheet" href="style/connected.css" type="text/css">
+		<link rel="stylesheet" href="style/history.css" type="text/css">
+		<script src="http://www.datejs.com/build/date.js" type="text/javascript"></script>
+		
+	</head>
+	<body>
+		<section>
+			<div id="content">
+				<img src="images/rsz_ittralee_icone.png" alt="ITtralee" width="100" height="100" >
+				<h1>Institute of Technology of Tralee</h1>
+				
+				<!-- ============ Separator ================= -->
+				<div class="or-spacer">
+					  <div class="mask"></div>
+				</div>
+				<h2>Appointment Application</h2>
+				<form action="" method="" name="">
+						<div class="part_align">
+						<h3>Global Statistics</h3>
+						<h4>Total and average</h4>
+						 <table class="tg">
+													  <tr>
+														<th class="tg-031e">Total number of users</th>
+														<th class="tg-031e">Total number of meeting</th>
+														<th class="tg-031e">Total number of request</th>
+														<th class="tg-031e">Average time spent on the app per user </th>
+														<th class="tg-031e">Average number of request per user</th>
+													  </tr>
+													  <tr>
+													  		<?php while($row_view_gen = $result_view_general->fetch_row()){ ?>
+																<tr>
+																		<th> <?php echo $row_view_gen[0]; ?> </th>
+																		<th> <?php echo $row_view_gen[1]; ?> </th>
+																		<th> <?php echo $row_view_gen[2]; ?> </th>
+																		<th> <?php echo $row_view_gen[3]; ?> </th>
+																		<th> <?php echo $row_view_gen[4]; ?> </th>
+																</tr>
+															<?php } ?>
+													  </tr>
+							</table>	
+							<br>
+							<h4>Total about appointment</h4>
+							<table class="tg">
+													  <tr>
+														<th class="tg-031e">Total number of appointment</th>
+														<th class="tg-031e">Total number of appointment waiting</th>
+														<th class="tg-031e">Total number of appointment accepted</th>
+														<th class="tg-031e">Total number of appointment cancelled</th>
+													  </tr>
+													  <tr>
+													  		<?php while($row_view_app = $result_view_app->fetch_row()){ ?>
+																<tr>
+																		<th> <?php echo $row_view_app[0]; ?> </th>
+																		<th> <?php echo $row_view_app[1]; ?> </th>
+																		<th> <?php echo $row_view_app[2]; ?> </th>
+																		<th> <?php echo $row_view_app[3]; ?> </th>
+																</tr>
+															<?php } ?>
+													  </tr>
+							</table>	
+							<br>
+							<table class="tg">
+													  <tr>
+														<th class="tg-031e">Total number of appointment</th>
+														<th class="tg-031e">Total number of appointment waiting</th>
+														<th class="tg-031e">Total number of appointment accepted</th>
+														<th class="tg-031e">Total number of appointment cancelled</th>
+													  </tr>
+													  <tr>
+													  		<?php while($row_view_app = $result_view_app->fetch_row()){ ?>
+																<tr>
+																		<th> <?php echo $row_view_app[0]; ?> </th>
+																		<th> <?php echo $row_view_app[1]; ?> </th>
+																		<th> <?php echo $row_view_app[2]; ?> </th>
+																		<th> <?php echo $row_view_app[3]; ?> </th>
+																</tr>
+															<?php } ?>
+													  </tr>
+							</table>	
+						</div>
+						<br>
 						
-						?>
 						
 						
 						<a href="logoutAdmin.php" style="text-decoration: none;"><input class="btn-disconnect" value="Disconnect" type="button" ></a>

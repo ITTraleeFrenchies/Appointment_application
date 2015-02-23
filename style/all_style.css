@@ -8,12 +8,7 @@ body {
 }
 
 p {
-	font: 14px Tahoma, Helvetica, Arial, Sans-Serif;
-<<<<<<< HEAD
-=======
-=======
 	font: 13px Tahoma, Helvetica, Arial, Sans-Serif;
->>>>>>> origin/master
 
 }img {
 float:left;
@@ -53,17 +48,20 @@ font: 18px Tahoma, Helvetica, Arial, Sans-Serif;
 h3 {
 color:white;
   font-weight: bold;
-text-align: center;
-padding-top:2%;
 font: 16px Tahoma, Helvetica, Arial, Sans-Serif;
-<<<<<<< HEAD
-=======
 text-align: center;
 padding-top:2%;
-font: 14px Tahoma, Helvetica, Arial, Sans-Serif;
->>>>>>> origin/master
 
 }
+h4 {
+color:white;
+  font-weight: bold;
+text-align: center;
+padding-top:2%;
+font: 13px Tahoma, Helvetica, Arial, Sans-Serif;
+
+}
+
 /* ================= the separator ===============*/
 .or-spacer {
 width : 100%; 
