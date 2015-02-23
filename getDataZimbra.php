@@ -48,7 +48,7 @@ $day_meeting="";
 				}
 				return $array_busy_times;	
 			}
-			else{echo "erreur";}
+			else{echo "error";}
 		
 		
 	}

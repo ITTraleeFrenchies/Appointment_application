@@ -13,8 +13,38 @@ session_start();
 	we check the state.
 	If a meeting from a service does not appear, or the service was before or the service has been cancelled
 	*/
+
+/*
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "appointment_db";
+		$sql_nb_user = "SELECT * FROM service";
+	$link = mysqli_connect($servername, $username, $password, $dbname);
+	$result = mysqli_query($link,$sql_nb_user);
+	$nb_service = (mysqli_num_rows($result));
+	while($row = $result->fetch_row()){
+		if (getBusyTime($row[0],'busyTimeData.txt') != "error"){
+			$array = getBusyTime($row[0],'busyTimeData.txt');
+			echo $row[0];
+			foreach($array as $key => $val){ 
+				 echo $val; ;
+			}
+		}
+	}*/
 	
-	
+
+	// ============== get all busy time of the user ==========================
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "appointment_db";
+	$sql_get_app = "SELECT * FROM appointment where tnumber='" . $_SESSION['tnumber']."'";
+	$link = mysqli_connect($servername, $username, $password, $dbname);
+	$result = mysqli_query($link,$sql_get_app);
+	$nb_app = (mysqli_num_rows($result));
+	$index=0;
+
 	
 ?>
 <!DOCTYPE html>
@@ -26,14 +56,7 @@ session_start();
 		<link rel="stylesheet" href="style/all_style.css" type="text/css">
 		<link rel="stylesheet" href="style/history.css" type="text/css">
 		<script type="text/javascript" >
-	
-		function getData(){
-		}
-		
-				
-					
-					
-							
+
 		</script>
 	</head>
 	<body onload="getData();">
@@ -55,7 +78,7 @@ session_start();
 												  </div>
 												  <div id="text">
 												  </div>
-												  <table class="tg">
+												  <table class="tg" id="tableApp">
 													  <tr>
 														<th class="tg-031e">Service</th>
 														<th class="tg-031e">Date request</th>
@@ -63,12 +86,18 @@ session_start();
 														<th class="tg-031e">State</th>
 													  </tr>
 													  <tr>
-														<td class="tg-031e"></td>
-														<td class="tg-031e"></td>
-														<td class="tg-031e"></td>
-														<td class="tg-031e"></td>
+													  	<?php while($row = $result->fetch_row()){ ?>
+															<tr>
+																	<th> <?php echo $row[$index+2]; ?> </th>
+																	<th> <?php echo $row[$index+3]; ?> </th>
+																	<th> <?php echo $row[$index+4]; ?> </th>
+																	<th> <?php echo $row[$index+5]; ?> </th>
+															</tr>
+														<?php } ?>
+														
 													  </tr>
 												</table>
+											 <div id="display-meeting"></div>	
 											<div class="back-make"><a href="connectedM.php" style=" float:right; color:white;">Back to make an appointment</a></div>	
 										</p>
 							</form>

@@ -1,24 +1,5 @@
 
 <?php
-	/*
-Username: dyslexia
-Password: testproj15dysl
-Name: Dyslexia Student Services
-Email: dyslexia@ittralee.ie
-
-
-Username: counsellor
-Password: testproj15coun
-Name: Counsellor Student Services
-Email: counsellor@ittralee.ie
-
-
-Username: access
-Password: testproj15accs
-Name: Access Student Services
-counsellor@ittralee.ie
-Email: access@ittralee.ie
-  */
        // ====================== We retrieve data from the user =====================
       function loadUser($user, $password, $file){
               $ch = curl_init(); 
@@ -60,5 +41,6 @@ Email: access@ittralee.ie
 
          else return curl_close(curl);"FAIL: curl_init()"; 
          }
+
 
   ?> 

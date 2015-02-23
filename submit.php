@@ -20,13 +20,6 @@
 		if ($query) {
 				header("location: email_meeting.php");
 			}
-		/*else {
-			session_start();
-				if(session_destroy()) // Destroying All Sessions
-				{
-					//header("location: index.php");
-				}
-			}*/
 	}		
 	
 ?>

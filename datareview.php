@@ -1,7 +1,5 @@
 <?php
 session_start();
-/* =================  We include the script in order to retrieve data  ====================== */
-	
 	// ======== if session is not started ========
 	if(!isset($_SESSION['username'])){
 		header("location: indexAdmin.php"); // Redirecting To Other Page
@@ -63,6 +61,9 @@ session_start();
 													  </tr>
 							</table>	
 						</div>
+						<br>
+						<a href="logoutAdmin.php" style="text-decoration: none;"><input class="btn-disconnect" value="Disconnect" type="button" ></a>
+						<br>
 				</form>	
 			</div>		
 		</section>
