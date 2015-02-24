@@ -19,25 +19,6 @@ session_start();
 						
 						$select_app = "select * from view_state";
 						$result_view_app = mysqli_query($link,$select_app);
-															
-															
-						/*=================== PERSONNAL VIEW ==================*/
-						/*$tnumber="t00178764";
-						$sql='create or replace view view_user as
-						select (select "'.$tnumber.'") as "tnumber",
-						(select count(*) from appointment where state="Accepted" and tnumber="'.$tnumber.'") as "Number of Meetings",
-						(select count(*) from appointment where tnumber="'.$tnumber.'") as "Number of requests"
-						';
-						
-						$query = mysqli_query($link,$sql);*/
-						
-						$select = "select * from view_user";
-						$result_view_user = mysqli_query($link,$select);
-						
-								
-
-
-
 
 ?>
 <!DOCTYPE html>
@@ -49,8 +30,8 @@ session_start();
 		<link rel="stylesheet" href="style/all_style.css" type="text/css">
 		<link rel="stylesheet" href="style/connected.css" type="text/css">
 		<link rel="stylesheet" href="style/history.css" type="text/css">
+		<link rel="stylesheet" href="style/datareview.css" type="text/css">
 		<script src="http://www.datejs.com/build/date.js" type="text/javascript"></script>
-		
 	</head>
 	<body>
 		<section>
@@ -87,7 +68,6 @@ session_start();
 															<?php } ?>
 													  </tr>
 							</table>	
-							<br>
 							<h4>Total about appointment</h4>
 							<table class="tg">
 													  <tr>
@@ -107,30 +87,80 @@ session_start();
 															<?php } ?>
 													  </tr>
 							</table>	
-							<br>
-							<h4>User stats</h4>
-							<table class="tg">
-													<tr>
-														<th class="tg-031e">TNumber</th>
-														<th class="tg-031e">Total number of appointments attended</th>
-														<th class="tg-031e">Total number of requests sent</th>
-														<th class="tg-031e">Date of registration</th>
-														<th class="tg-031e">Date of the first request</th>
-														<th class="tg-031e">Time between registration and first request</th>
-													</tr>
-													<tr>
-														<?php while($row_view_user = $result_view_user->fetch_row()){ ?>
-																<tr>
-																		<th> <?php echo $row_view_user[0]; ?> </th>
-																		<th> <?php echo $row_view_user[1]; ?> </th>
-																		<th> <?php echo $row_view_user[2]; ?> </th>
-																		<th> <?php echo $row_view_user[3]; ?> </th>
-																		<th> <?php echo $row_view_user[4]; ?> </th>
-																		<th> <?php echo $row_view_user[5]; ?> </th>
-																</tr>
+							<form action="" method="get" name="login">
+									<label for="tnumber">Search</label>
+							   	    <input type="text" name="tnumber" maxlength="9" placeholder="tnumber" id="tnumber"/>
+							   	    <button type="submit" class="button" >Search</button>
+							   	    <br>
+							   	    <br>
+									<table class="tg">
+															<tr>
+																<?php 
+
+																/*=================== PERSONNAL VIEW ==================*/
+																if(isset($_GET['tnumber'])){ 
+
+																	$sql_find = 'select * from user where tnumber = "' . $_GET['tnumber'].'"';
+																	$query_find = mysqli_query($link,$sql_find);
+
+																/* ===========   if the user exists in the database==================*/
+																	if (!$query_find  || $_GET['tnumber'] == "") {
+																		$error = "This user does not exist.";
+																	?>
+																		<br>
+																	<!-- ============ Display an error ================= -->
+																		<span><?php echo $error; ?></span>
+
+																	<?php 	
+																	}else {
+																		echo $_GET['tnumber'];
+																	$tnumber = $_GET['tnumber'];
+																	$sql_view='create or replace view view_user as 
+																	select (select "'. $tnumber.'") as "tnumber", (select count(*) from appointment where state="Accepted" and tnumber="'. $tnumber.'") 
+																	as "Number of Meetings", (select count(*) from appointment where tnumber="'. $tnumber.'")
+																	 as "Number of requests", (select register_date from user where tnumber="'. $tnumber.'") 
+																	 as "Register date", (select min(date_request) from appointment where tnumber="'. $tnumber.'")
+																	 as "Date of first request",
+																	  (select CONCAT( FLOOR(HOUR(TIMEDIFF(user.register_date, min(appointment.date_request))) / 24), 
+																	  	" days ", MOD(HOUR(TIMEDIFF(user.register_date, min(appointment.date_request))),24),
+																	  	 " hours ", MINUTE(TIMEDIFF(user.register_date, min(appointment.date_request))), 
+																	  	 " minutes") from appointment join user on appointment.tnumber = user.tnumber where appointment.tnumber="'. $tnumber.'") 
+																	  as "Time diff"';
+
+																	$select_view_user = "select * from view_user";
+																	$result_view_user = mysqli_query($link,$select_view_user);
+
+
+																	?>
+
+																	<tr>
+																		<th class="tg-031e">TNumber</th>
+																		<th class="tg-031e">Total number of appointments attended</th>
+																		<th class="tg-031e">Total number of requests sent</th>
+																		<th class="tg-031e">Date of registration</th>
+																		<th class="tg-031e">Date of the first request</th>
+																		<th class="tg-031e">Time between registration and first request</th>
+																	</tr>
+
+																	<?php
+																 	while($row_view_user = $result_view_user->fetch_row()){ ?>
+
+																			<tr>
+																					<th> <?php echo $row_view_user[0]; ?> </th>
+																					<th> <?php echo $row_view_user[1]; ?> </th>
+																					<th> <?php echo $row_view_user[2]; ?> </th>
+																					<th> <?php echo $row_view_user[3]; ?> </th>
+																					<th> <?php echo $row_view_user[4]; ?> </th>
+																					<th> <?php echo $row_view_user[5]; ?> </th>
+																			</tr>
+																		<?php } ?>
+																		
+																		
+																	<?php } ?> 
 															<?php } ?>
-													  </tr> 
-						</table>							  
+															</tr> 
+									</table>		
+							</form>							  
 						</div>
 						<br>
 						

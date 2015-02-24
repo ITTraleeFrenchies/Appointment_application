@@ -27,6 +27,8 @@
 		$sql="select * from admin where username='$value_user' AND password='$value_password'";
 		
 		$query = mysqli_query($link,$sql);
+		$error = mysqli_num_rows($query);
+
 		/* ===========   if the user exists in the database, we redirect the user to connected.php==================*/
 			if (mysqli_num_rows($query) == 1) {
 				$_SESSION['username']= $value_user;  // Initializing Session with value of PHP Variable

@@ -37,7 +37,7 @@
 								<br>
 								<br>
 								<label for="pin">Password</label>
-							    <input type="password" name="password" placeholder="*****" maxlength="30"/>
+							    <input type="password" name="password" placeholder="*********" maxlength="30"/>
 								<br>
 								<br>
 								<!-- ============ Display an error if the connection did not work ================= -->
