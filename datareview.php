@@ -20,39 +20,20 @@ session_start();
 						$select_app = "select * from view_state";
 						$result_view_app = mysqli_query($link,$select_app);
 															
-						
-						
-						
-						
-						/*================== TIME VIEW =============================*/
-						echo ("Time View : </br>");
-						
-						$select = "select * from view_time";
-						$result = mysqli_query($link,$select);
-						
-						while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
-							var_dump($row);
-							echo "</br></br>";
-						}
-						
-						echo ("PERSONNAL VIEW </br></br>");
+															
 						/*=================== PERSONNAL VIEW ==================*/
-						$tnumber="t00178764";
+						/*$tnumber="t00178764";
 						$sql='create or replace view view_user as
 						select (select "'.$tnumber.'") as "tnumber",
 						(select count(*) from appointment where state="Accepted" and tnumber="'.$tnumber.'") as "Number of Meetings",
 						(select count(*) from appointment where tnumber="'.$tnumber.'") as "Number of requests"
 						';
 						
-						$query = mysqli_query($link,$sql);
+						$query = mysqli_query($link,$sql);*/
 						
 						$select = "select * from view_user";
-						$result = mysqli_query($link,$select);
+						$result_view_user = mysqli_query($link,$select);
 						
-						while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
-							var_dump($row);
-							echo "</br>";
-						}
 								
 
 
@@ -127,24 +108,29 @@ session_start();
 													  </tr>
 							</table>	
 							<br>
+							<h4>User stats</h4>
 							<table class="tg">
-													  <tr>
-														<th class="tg-031e">Total number of appointment</th>
-														<th class="tg-031e">Total number of appointment waiting</th>
-														<th class="tg-031e">Total number of appointment accepted</th>
-														<th class="tg-031e">Total number of appointment cancelled</th>
-													  </tr>
-													  <tr>
-													  		<?php while($row_view_app = $result_view_app->fetch_row()){ ?>
+													<tr>
+														<th class="tg-031e">TNumber</th>
+														<th class="tg-031e">Total number of appointments attended</th>
+														<th class="tg-031e">Total number of requests sent</th>
+														<th class="tg-031e">Date of registration</th>
+														<th class="tg-031e">Date of the first request</th>
+														<th class="tg-031e">Time between registration and first request</th>
+													</tr>
+													<tr>
+														<?php while($row_view_user = $result_view_user->fetch_row()){ ?>
 																<tr>
-																		<th> <?php echo $row_view_app[0]; ?> </th>
-																		<th> <?php echo $row_view_app[1]; ?> </th>
-																		<th> <?php echo $row_view_app[2]; ?> </th>
-																		<th> <?php echo $row_view_app[3]; ?> </th>
+																		<th> <?php echo $row_view_user[0]; ?> </th>
+																		<th> <?php echo $row_view_user[1]; ?> </th>
+																		<th> <?php echo $row_view_user[2]; ?> </th>
+																		<th> <?php echo $row_view_user[3]; ?> </th>
+																		<th> <?php echo $row_view_user[4]; ?> </th>
+																		<th> <?php echo $row_view_user[5]; ?> </th>
 																</tr>
 															<?php } ?>
-													  </tr>
-							</table>	
+													  </tr> 
+						</table>							  
 						</div>
 						<br>
 						
