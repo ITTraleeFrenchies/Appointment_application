@@ -16,7 +16,6 @@ session_start();
 						$select_total = "select * from view_general";
 						$result_view_general = mysqli_query($link,$select_total);
 
-						
 						$select_app = "select * from view_state";
 						$result_view_app = mysqli_query($link,$select_app);
 
@@ -47,11 +46,24 @@ session_start();
 				<form action="" method="" name="">
 						<div class="part_align">
 						<h3>Global Statistics</h3>
+						
+						<?php 
+							$sql_check='select * from connection';
+							$query_check = mysqli_query($link,$sql_check);
+							if($query_check->num_rows ==0){
+								?>
+								<h4>No statistics to show as no user has ever connected on the application</h4>
+								<?php 
+							}
+							else{
+							
+
+						?>
 						<h4>Total and average</h4>
 						 <table class="tg">
 													  <tr>
 														<th class="tg-031e">Total number of users</th>
-														<th class="tg-031e">Total number of meeting</th>
+														<th class="tg-031e">Average time of all meeting</th>
 														<th class="tg-031e">Total number of request</th>
 														<th class="tg-031e">Average time spent on the app per user </th>
 														<th class="tg-031e">Average number of request per user</th>
@@ -113,7 +125,8 @@ session_start();
 
 																	<?php 	
 																	}else {
-																		echo $_GET['tnumber'];
+
+															
 																	$tnumber = $_GET['tnumber'];
 																	$sql_view='create or replace view view_user as 
 																	select (select "'. $tnumber.'") as "tnumber", (select count(*) from appointment where state="Accepted" and tnumber="'. $tnumber.'") 
@@ -126,6 +139,12 @@ session_start();
 																	  	 " hours ", MINUTE(TIMEDIFF(user.register_date, min(appointment.date_request))), 
 																	  	 " minutes") from appointment join user on appointment.tnumber = user.tnumber where appointment.tnumber="'. $tnumber.'") 
 																	  as "Time diff"';
+																	  $result_view_user = mysqli_query($link,$sql_view);
+
+																	$sql_check_app = 'select * from appointment where tnumber = "' . $_GET['tnumber'].'"';
+																	$query_check_app = mysqli_query($link,$sql_find);
+
+																	if($query_check_app->num_rows !=0){
 
 																	$select_view_user = "select * from view_user";
 																	$result_view_user = mysqli_query($link,$select_view_user);
@@ -143,8 +162,20 @@ session_start();
 																	</tr>
 
 																	<?php
-																 	while($row_view_user = $result_view_user->fetch_row()){ ?>
+																 	while($row_view_user = $result_view_user->fetch_row()){ 
+																 			if($row_view_user[4] == "" ){
+																 				?>
+																 					<th> <?php echo $row_view_user[0]; ?> </th>
+																					<th> <?php echo $row_view_user[1]; ?> </th>
+																					<th> <?php echo $row_view_user[2]; ?> </th>
+																					<th> <?php echo $row_view_user[3]; ?> </th>
+																					<th> <?php echo "None"; ?> </th>
+																					<th> <?php echo "None"; ?> </th>
+																			<?php		
+																 			}else{
 
+
+																 			?>
 																			<tr>
 																					<th> <?php echo $row_view_user[0]; ?> </th>
 																					<th> <?php echo $row_view_user[1]; ?> </th>
@@ -153,11 +184,13 @@ session_start();
 																					<th> <?php echo $row_view_user[4]; ?> </th>
 																					<th> <?php echo $row_view_user[5]; ?> </th>
 																			</tr>
-																		<?php } ?>
-																		
-																		
-																	<?php } ?> 
-															<?php } ?>
+																	<?php 
+																		}
+																	} ?>
+																	<?php } ?>	
+																<?php } ?> 
+															<?php } ?>	
+													<?php } ?>
 															</tr> 
 									</table>		
 							</form>							  
