@@ -37,7 +37,7 @@ session_start();
 	// ============== get all busy time of the user ==========================
 	$servername = "localhost";
 	$username = "root";
-	$password = "";
+	$password = "mysqlitt12345";
 	$dbname = "appointment_db";
 	$sql_get_app = "SELECT * FROM appointment where tnumber='" . $_SESSION['tnumber']."'";
 	$link = mysqli_connect($servername, $username, $password, $dbname);
