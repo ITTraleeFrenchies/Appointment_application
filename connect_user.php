@@ -2,7 +2,6 @@
 	/* ===========  Variable To Store Error Message ==================*/
 	$error=''; 
 	if (isset($_POST['submit_login'])) {
-		$error = "yo";
 		if (empty($_POST['tnumber']) || empty($_POST['pin'])) {
 			$error = "tnumber or pin is invalid";
 		}

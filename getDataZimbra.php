@@ -7,28 +7,18 @@ $day_meeting="";
 
 	$servername = "localhost";
 	$username = "root";
-	$password = "";
+	$password = "mysqlitt12345";
 	$dbname = "appointment_db";
 	
 			$link = mysqli_connect($servername, $username, $password, $dbname);
 			$sql_retrieve = 'select password from service where name ="'.  $service.'"';
 			$query_retrieve = mysqli_query($link,$sql_retrieve);
 			$rowcount=mysqli_num_rows($query_retrieve);
-			//echo $sql_retrieve;
 			$result = mysqli_query($link,"select email_address from service where name ='" . $service."'");
 			while ($row = $result->fetch_assoc()) {
-				//echo $row['email_address']."<br>";
 				$user= explode("@",$row['email_address']);
 			}
-			//$row = mysql_fetch_array($result);
-			//echo $row;
-			//$user= explode("@",$row);
-
-			//var_dump($query_retrieve); 
-
-			//echo $rowcount;
 			if ($rowcount == 1) {
-				//echo $user[0];
 				loadUser($user[0], $query_retrieve, $file);
 				$select = file_get_contents($file);
 				$lines = explode("\n", $select);

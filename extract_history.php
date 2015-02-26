@@ -3,7 +3,7 @@
 	function get_meetings_user(){
 		$servername = "localhost";
 		$username = "root";
-		$password = "";
+		$password = "mysqlitt12345";
 		$dbname = "appointment_db";
 		
 		$tnumber=$_SESSION['tnumber'];
