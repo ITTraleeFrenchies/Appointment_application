@@ -1,10 +1,10 @@
 <?php
 	session_start();
 	/* =================  We include the script in order to check the connection  ====================== */
-	include('connectAdmin.php'); 
-	/* =================  If the user already connected  ====================== */
-	if(isset($_SESSION['username'])){
-		header("location: datareview.php");
+	include('script_sql_index.php'); 
+	/* =================  If a session is not openned   ====================== */
+	if(isset($_SESSION['tnumber'])){
+		header("location: connectedM.php");
 	}
 	
 	
@@ -29,22 +29,23 @@
 				</div>
 				<h2>Appointment Application</h2>
 					<form action="" method="post" name="login">
-						<h3>Administration </h2>
 						<div class="part_align">
 								<br>
-								<label for="username">Username</label>
-								<input type="text" name="username" placeholder="username" maxlength="30">
+								<br>
+								<label for="tnumber">T-number</label>
+								<input type="text" name="tnumber" placeholder="tnumber" maxlength="9">
 								<br>
 								<br>
-								<label for="pin">Password</label>
-							    <input type="password" name="password" placeholder="*********" maxlength="30"/>
+								<label for="pin">Pin</label>
+							    <input type="password" name="pin" placeholder="*****" maxlength="5"/>
 								<br>
 								<br>
-								<!-- ============ Display an error if the connection did not work ================= -->
+									<!-- ============ Display an error if the connection did not work ================= -->
 									<span><?php echo $error; ?></span>
 								<br>
 								<br>	
 								<input name="submit_login" class="btn-login" value="login" type="submit">
+								<input name="submit_subscribe" class="btn-subscribe" value="subscribe" type="submit">
 								<br>
 							</div>
 					</form>

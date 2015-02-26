@@ -2,7 +2,7 @@
 	session_start();
 	/* =================  We include the script in order to check the connection  ====================== */
 	include('connectAdmin.php'); 
-	/* =================  If the user already connected  ====================== */
+	/* =================  If a session is not openned   ====================== */
 	if(isset($_SESSION['username'])){
 		header("location: datareview.php");
 	}
@@ -29,7 +29,7 @@
 				</div>
 				<h2>Appointment Application</h2>
 					<form action="" method="post" name="login">
-						<h3>Administration </h2>
+						<h3>Administration connection</h2>
 						<div class="part_align">
 								<br>
 								<label for="username">Username</label>

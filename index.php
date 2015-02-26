@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	/* =================  We include the script in order to check the connection  ====================== */
-	include('script_sql_index.php'); 
+	include('connect_user.php'); 
 	/* =================  If a session is not openned   ====================== */
 	if(isset($_SESSION['tnumber'])){
 		header("location: connectedM.php");

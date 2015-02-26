@@ -9,7 +9,7 @@ var dateObject = $(this).datepicker('getDate');
     /* ============identifications for database================= */
 	$servername = "localhost";
 	$username = "root";
-	$password = "mysqlitt12345";
+	$password = "ittdb12345";
 	$dbname = "appointment_db";
 	$error='';
 

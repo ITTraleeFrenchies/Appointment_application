@@ -7,7 +7,7 @@ session_start();
 						
 						$servername = "localhost";
 						$username = "root";
-						$password = "mysqlitt12345";
+						$password = "ittdb12345";
 						$dbname = "appointment_db";
 						
 						$link = mysqli_connect($servername, $username, $password, $dbname);
@@ -30,6 +30,7 @@ session_start();
 		<link rel="stylesheet" href="style/connected.css" type="text/css">
 		<link rel="stylesheet" href="style/history.css" type="text/css">
 		<link rel="stylesheet" href="style/datareview.css" type="text/css">
+		<script src="http://www.datejs.com/build/date.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<section>
@@ -44,10 +45,6 @@ session_start();
 				<h2>Appointment Application</h2>
 				<form action="" method="" name="">
 						<div class="part_align">
-						<h3>Administration </h2>
-							<div>
-							    <span class="sexy_line"></span>
-							</div>	
 						<h3>Global Statistics</h3>
 						
 						<?php 
@@ -66,9 +63,9 @@ session_start();
 						 <table class="tg">
 													  <tr>
 														<th class="tg-031e">Total number of users</th>
-														<th class="tg-031e">Average time spent on the application</th>
+														<th class="tg-031e">Average time of all meeting</th>
 														<th class="tg-031e">Total number of request</th>
-														<th class="tg-031e">Meeting accepted</th>
+														<th class="tg-031e">Average time spent on the app per user </th>
 														<th class="tg-031e">Average number of request per user</th>
 													  </tr>
 													  <tr>
@@ -117,8 +114,9 @@ session_start();
 
 																	$sql_find = 'select * from user where tnumber = "' . $_GET['tnumber'].'"';
 																	$query_find = mysqli_query($link,$sql_find);
+
 																/* ===========   if the user exists in the database==================*/
-																	if (!$query_find  || $_GET['tnumber'] == "" || empty($query_find) || $query_find->num_rows ==0) {
+																	if (!$query_find  || $_GET['tnumber'] == "") {
 																		$error = "This user does not exist.";
 																	?>
 																		<br>
@@ -194,14 +192,15 @@ session_start();
 															<?php } ?>	
 													<?php } ?>
 															</tr> 
-									</table>	
-									<div class="see-services"><a href="seeService.php" style=" float:right; color:white;">See and update services</a></div>	
+									</table>		
 							</form>							  
 						</div>
 						<br>
+						
+						
+						
 						<a href="logoutAdmin.php" style="text-decoration: none;"><input class="btn-disconnect" value="Disconnect" type="button" ></a>
 						<br>
-
 				</form>	
 			</div>		
 		</section>
