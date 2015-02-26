@@ -15,7 +15,7 @@
 		//================= identifications for database =================
 		$servername = "localhost";
 		$username = "root";
-		$password = "";
+		$password = "mysqlitt12345";
 		$dbname = "appointment_db";
 		//================= Create connection =================
 		$link = mysqli_connect($servername, $username, $password, $dbname);

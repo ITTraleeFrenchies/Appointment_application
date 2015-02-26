@@ -29,7 +29,7 @@
 				</div>
 				<h2>Appointment Application</h2>
 					<form action="" method="post" name="login">
-						<h3>Administration connection</h2>
+						<h3>Administration </h2>
 						<div class="part_align">
 								<br>
 								<label for="username">Username</label>

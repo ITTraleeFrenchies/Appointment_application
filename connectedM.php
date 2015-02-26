@@ -1,7 +1,7 @@
 <?php
 session_start();
 /* =================  We include the script in order to retrieve data  ====================== */
-	include('submit.php');
+	include('submitAppointment.php');
 	include('extract_busy_time.php'); 
 	include('getDataZimbra.php');  
 	// ======== if session is not started ========
