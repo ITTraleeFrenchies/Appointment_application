@@ -1,8 +1,8 @@
 <?php
 session_start();
-	/* =================  If the user already connected  ====================== */
-	if(isset($_SESSION['username'])){
-		header("location: datareview.php");
+		// ======== if session is not started ========
+	if(!isset($_SESSION['username'])){
+		header("location: indexAdmin.php"); // Redirecting To Other Page
 	}
 						
 						$servername = "localhost";
