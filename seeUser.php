@@ -1,9 +1,12 @@
 <?php
 session_start();
+<<<<<<< HEAD
 	/* =================  If the user already connected  ====================== */
 	if(isset($_SESSION['username'])){
 		header("location: datareview.php");
 	}
+=======
+>>>>>>> origin/master
 						
 						$servername = "localhost";
 						$username = "root";
