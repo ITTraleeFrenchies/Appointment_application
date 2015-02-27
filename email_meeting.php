@@ -1,7 +1,7 @@
 <?php
 /* =================  Redirect the page email.php to index.php after 3 seconds   ====================== */	
 header( "refresh:3;url=index.php" );
-include "submit.php";
+include "submitAppointment.php";
 
 /* =================  We retrieve the data  ====================== */	
 session_start();
