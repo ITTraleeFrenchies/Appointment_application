@@ -10,14 +10,14 @@ session_start();
 	$pin =  substr($tnumber, -5); 
   	
  /* =================  We send an email to the student   ====================== */	
- /* 	$to      = $email;
+  	$to      = $email;
 	$subject = 'Registering to Appointment Application of the Institute of Technology of Tralee';
 	$message = 'Hello ' . $tnumber . ' , <br /> You are now registered in the appointment application
 	the Institute of Technology of Tralee. <br /> Your PIN is : ' . $pin ;
 	$headers = 'From:  webmaster.it.tralee.app@gmail.com' . "\r\n" .
     'Reply-To:  webmaster.it.tralee.app@gmail.com' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
-	 mail($to, $subject, $message, $headers);*/
+	 mail($to, $subject, $message, $headers);
 	
 
 /* =================  Code HTML of email.php   ====================== */	
