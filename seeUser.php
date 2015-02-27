@@ -25,6 +25,41 @@ session_start();
 		<link rel="stylesheet" href="style/connected.css" type="text/css">
 		<link rel="stylesheet" href="style/history.css" type="text/css">
 		<link rel="stylesheet" href="style/datareview.css" type="text/css">
+		<script>
+			function updateAttr(){
+
+				var attr_selected = document.getElementById("attribute").selectedIndex ;
+
+				if(attr_selected == 0){
+					 document.getElementById("new_attribute").value = "<?php echo $attr1 ?>";
+				}else if(attr_selected == 1){
+					 document.getElementById("new_attribute").value = "<?php echo $attr2 ?>";
+				}else if(attr_selected == 2){
+					 document.getElementById("new_attribute").value = "<?php echo $attr3 ?>";
+				}else if(attr_selected == 3){
+					 document.getElementById("new_attribute").value = "<?php echo $attr4 ?>";
+				}else if(attr_selected == 4){
+					 document.getElementById("new_attribute").value = "<?php echo $attr5 ?>";
+				}else if(attr_selected == 5){
+					 document.getElementById("new_attribute").value = "<?php echo $attr6 ?>";
+				}else if(attr_selected == 6){
+					 document.getElementById("new_attribute").value = "<?php echo $attr7 ?>";
+				}else if(attr_selected == 7){
+					 document.getElementById("new_attribute").value = "<?php echo $attr8 ?>";
+				}else if(attr_selected == 8){
+					 document.getElementById("new_attribute").value = "<?php echo $attr9 ?>";
+				}else if(attr_selected == 9){
+					 document.getElementById("new_attribute").value = "<?php echo $attr10 ?>";
+				}
+
+				/*else if(attr_selected == 10){
+					 document.getElementById("new_attribute").value = "<?php echo $attr11 ?>";
+				}*/
+				
+
+
+			}
+		</script>		
 	</head>
 	<body>
 		<section>
@@ -37,7 +72,7 @@ session_start();
 					  <div class="mask"></div>
 				</div>
 				<h2>Appointment Application</h2>
-				<form action="" method="get" name="">
+				<form action="" method="post" name="search">
 						<div class="part_align">	
 							<h3>Administration </h2>
 							<div>
@@ -53,12 +88,12 @@ session_start();
 							 <?php 
 
 																/*=================== PERSONNAL VIEW ==================*/
-																if(isset($_GET['tnumber'])){ 
+																if(isset($_POST['tnumber'])){ 
 
-																	$sql_find = 'select * from user where tnumber = "' . $_GET['tnumber'].'"';
+																	$sql_find = 'select * from user where tnumber = "' . $_POST['tnumber'].'"';
 																	$query_find = mysqli_query($link,$sql_find);
 																/* ===========   if the user exists in the database==================*/
-																	if (!$query_find  || $_GET['tnumber'] == "" || empty($query_find) || $query_find->num_rows ==0) {
+																	if (!$query_find  || $_POST['tnumber'] == "" || empty($query_find) || $query_find->num_rows ==0) {
 																			$error = "This user does not exist.";
 																	?>
 																		<br>
@@ -83,26 +118,17 @@ session_start();
 																	<?php 		  
 																			while($row_user = $query_find->fetch_row()){ ?>
 																			<tr>
-																					<th> <?php echo $row_user[0]; ?> </th>
-																					<th> <?php echo $row_user[1]; ?> </th>
-																					<th> <?php echo $row_user[2]; ?> </th>
-																					<th> <?php echo $row_user[3]; ?> </th>
-																					<th> <?php echo $row_user[4]; ?> </th>
-																					<th> <?php echo $row_user[5]; ?> </th>
-																					<th> <?php echo $row_user[6]; ?> </th>
-																					<th> <?php echo $row_user[7]; ?> </th>
-																					<th> <?php echo $row_user[8]; ?> </th>
-
-																					<?php 
-																						$row_9 = $row_user[9]; 
-																						$row_10 = $row_user[10];  
-																						$row_11 = $row_user[11];  
-																						$row_12 = $row_user[12];  	
-																						$row_13 = $row_user[13]; 
-																						$row_14 = $row_user[14]; 
-																					?> 
+																					<th> <?php echo $row_user[0]; $attr1 = $row_user[0];?> </th>
+																					<th> <?php echo $row_user[1]; $attr2 = $row_user[1];?> </th>
+																					<th> <?php echo $row_user[2]; $attr3 = $row_user[2];?> </th>
+																					<th> <?php echo $row_user[3]; $attr4 = $row_user[3];?> </th>
+																					<th> <?php echo $row_user[4]; $attr5 = $row_user[4];?> </th>
+																					<th> <?php echo $row_user[5]; $attr6 = $row_user[5];?> </th>
+																					<th> <?php echo $row_user[6]; $attr7 = $row_user[6];?> </th>
+																					<th> <?php echo $row_user[7]; $attr8 = $row_user[7];?> </th>
+																					<th> <?php echo $row_user[8]; $attr9 = $row_user[8];?> </th>
 																			</tr>
-																		<?php } ?>
+																		
 							</table>											
 							<table class="tg">										
 																		<tr>
@@ -115,19 +141,39 @@ session_start();
 																		</tr>		  
 																			<tr>
 																					
-																					<th> <?php echo $row_9 ; ?> </th>
-																					<th> <?php echo $row_10 ; ?> </th>
-																					<th> <?php echo $row_11 ; ?> </th>
-																					<th> <?php echo $row_12 ; ?> </th>
-																					<th> <?php echo $row_13 ; ?> </th>
-																					<th> <?php echo $row_14 ; ?> </th>
+																					<th> <?php echo $row_user[9]; $attr10 = $row_user[9]; ?> </th>
+																					<th> <?php echo $row_user[10]; $attr11 = $row_user[10]; ?> </th>
+																					<th> <?php echo $row_user[11]; $attr12 = $row_user[11]; ?> </th>
+																					<th> <?php echo $row_user[12]; $attr13 = $row_user[12]; ?> </th>
+																					<th> <?php echo $row_user[13]; $attr14 = $row_user[13]; ?> </th>
+																					<th> <?php echo $row_user[14]; $attr15 = $row_user[14]; ?> </th>
 																			</tr>	
 																			<?php } ?>		
 															<?php } ?>
+														<?php } ?>	
 
 							</table>	
-
-																														
+							<label for="service">Select </label>
+							<select name="attribute" id="attribute" onclick="updateAttr();">
+										 <option> tnumber </option> 
+										 <option> firstname </option>
+										 <option> lastname </option>
+										 <option> pin </option>
+										 <option> register date </option>
+										 <option> date of birth</option>
+										 <option> address1 </option>
+										 <option> address2 </option>
+										 <option> city </option>
+										 <option> county </option>
+										 <option> course</option>
+										 <option> type of disability </option>
+										 <option> contact number </option>
+										 <option> specification </option>
+							</select>	
+							<input type="text" name="new_attribute" maxlength="100" placeholder="new value" id="new_attribute"/>
+							<br>
+							<button class="button" >Update</button>
+							<button class="button" >Delete</button>																				
 						</div>
 						<div class="see-services"><a href="seeService.php" style=" float:right; color:white;">See services</a></div>
 				</form>	
@@ -141,5 +187,7 @@ session_start();
 		</div>
 		
 	</body>
-						
+				
+
+		
 </html>

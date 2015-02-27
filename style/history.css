@@ -16,6 +16,7 @@ form {
 select {
    background-color:#BDBDBD;
    min-width: 100px;
+   max-width: 150px;
    padding: 5px;
    font-size: 16px;
    border: 1px solid #ccc;
