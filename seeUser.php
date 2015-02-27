@@ -25,41 +25,7 @@ session_start();
 		<link rel="stylesheet" href="style/connected.css" type="text/css">
 		<link rel="stylesheet" href="style/history.css" type="text/css">
 		<link rel="stylesheet" href="style/datareview.css" type="text/css">
-		<script>
-			function updateAttr(){
-
-				var attr_selected = document.getElementById("attribute").selectedIndex ;
-
-				if(attr_selected == 0){
-					 document.getElementById("new_attribute").value = "<?php echo $attr1 ?>";
-				}else if(attr_selected == 1){
-					 document.getElementById("new_attribute").value = "<?php echo $attr2 ?>";
-				}else if(attr_selected == 2){
-					 document.getElementById("new_attribute").value = "<?php echo $attr3 ?>";
-				}else if(attr_selected == 3){
-					 document.getElementById("new_attribute").value = "<?php echo $attr4 ?>";
-				}else if(attr_selected == 4){
-					 document.getElementById("new_attribute").value = "<?php echo $attr5 ?>";
-				}else if(attr_selected == 5){
-					 document.getElementById("new_attribute").value = "<?php echo $attr6 ?>";
-				}else if(attr_selected == 6){
-					 document.getElementById("new_attribute").value = "<?php echo $attr7 ?>";
-				}else if(attr_selected == 7){
-					 document.getElementById("new_attribute").value = "<?php echo $attr8 ?>";
-				}else if(attr_selected == 8){
-					 document.getElementById("new_attribute").value = "<?php echo $attr9 ?>";
-				}else if(attr_selected == 9){
-					 document.getElementById("new_attribute").value = "<?php echo $attr10 ?>";
-				}
-
-				/*else if(attr_selected == 10){
-					 document.getElementById("new_attribute").value = "<?php echo $attr11 ?>";
-				}*/
-				
-
-
-			}
-		</script>		
+	
 	</head>
 	<body>
 		<section>
@@ -167,11 +133,13 @@ session_start();
 										 <option> county </option>
 										 <option> course</option>
 										 <option> type of disability </option>
+										 <option> disability detail</option>
 										 <option> contact number </option>
 										 <option> specification </option>
 							</select>	
 							<input type="text" name="new_attribute" maxlength="100" placeholder="new value" id="new_attribute"/>
 							<br>
+							<div id="test"></div>
 							<button class="button" >Update</button>
 							<button class="button" >Delete</button>																				
 						</div>
@@ -188,6 +156,43 @@ session_start();
 		
 	</body>
 				
+		<script>
+			function updateAttr(){
 
+				var attr_selected = document.getElementById("attribute").selectedIndex ;
+
+				if(attr_selected == 0){
+					 document.getElementById("new_attribute").value = "<?php echo $attr1 ?>";
+				}else if(attr_selected == 1){
+					 document.getElementById("new_attribute").value = "<?php echo $attr2 ?>";
+				}else if(attr_selected == 2){
+					 document.getElementById("new_attribute").value = "<?php echo $attr3 ?>";
+				}else if(attr_selected == 3){
+					 document.getElementById("new_attribute").value = "<?php echo $attr4 ?>";
+				}else if(attr_selected == 4){
+					 document.getElementById("new_attribute").value = "<?php echo $attr5 ?>";
+				}else if(attr_selected == 5){
+					 document.getElementById("new_attribute").value = "<?php echo $attr6 ?>";
+				}else if(attr_selected == 6){
+					 document.getElementById("new_attribute").value = "<?php echo $attr7 ?>";
+				}else if(attr_selected == 7){
+					 document.getElementById("new_attribute").value = "<?php echo $attr8 ?>";
+				}else if(attr_selected == 8){
+					 document.getElementById("new_attribute").value = "<?php echo $attr9 ?>";
+				}else if(attr_selected == 9){
+					 document.getElementById("new_attribute").value = "<?php echo $attr10 ?>";
+				}else if(attr_selected == 10){
+					 document.getElementById("new_attribute").value = "<?php echo $attr11 ?>";
+				}else if(attr_selected == 11){
+					 document.getElementById("new_attribute").value = "<?php echo $attr12 ?>";
+				}else if(attr_selected == 12){
+					 document.getElementById("new_attribute").value = "<?php echo $attr13 ?>";
+				}else if(attr_selected == 13){
+					 document.getElementById("new_attribute").value = "<?php echo $attr14 ?>";
+				}else if(attr_selected == 14){
+					 document.getElementById("new_attribute").value = "<?php echo $attr15 ?>";
+				}
+			}
+		</script>	
 		
 </html>
