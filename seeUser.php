@@ -40,7 +40,7 @@ session_start();
 					  <div class="mask"></div>
 				</div>
 				<h2>Appointment Application</h2>
-				<form action="" method="post" name="search">
+				<form action="seeUser.php" method="post" name="search">
 						<div class="part_align">	
 							<h3>Administration </h2>
 							<div>
@@ -56,7 +56,7 @@ session_start();
 							 <?php 
 
 																/*=================== PERSONNAL VIEW ==================*/
-																if(isset($_POST['tnumber']) || isset($_POST['attribute']) && isset($_POST["search"])){ 
+																if(isset($_POST['tnumber']) || isset($_POST['attribute']) || $_SESSION["user_selected"]!=""){ 
 
 																	$sql_find = 'select * from user where tnumber = "' . $_POST['tnumber'].'"';
 																	$query_find = mysqli_query($link,$sql_find);
@@ -64,9 +64,6 @@ session_start();
 																	if (!$query_find  || $_POST['tnumber'] == "" || empty($query_find) || $query_find->num_rows ==0) {
 																			$error = "This user does not exist.";
 																	?>
-																		<br>
-																	<!-- ============ Display an error ================= -->
-																		<span><?php echo $error; ?></span>
 																	<?php 
 																		}else {
 
@@ -199,6 +196,9 @@ session_start();
 						</div>
 						<div class="see-services"><a href="seeService.php" style=" float:right; color:white;">See services</a></div>
 						<br>
+						<br>
+						<!-- ============ Display an error ================= -->
+						<span><?php echo $error; ?></span>
 				</form>	
 				<br>
 						<a href="logoutAdmin.php" style="text-decoration: none;"><input class="btn-disconnect" value="Disconnect" type="button" ></a>
